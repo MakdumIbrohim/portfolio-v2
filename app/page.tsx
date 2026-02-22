@@ -37,6 +37,10 @@ export default function Home() {
           <div className="flex flex-col gap-5 md:gap-6 relative z-10 w-full max-w-sm mx-auto lg:mx-0">
             {/* Profile Picture Box */}
             <div className="relative">
+              {/* Sticker */}
+              <div className="absolute -top-3 -right-3 md:-top-5 md:-right-5 border-[3px] border-black dark:border-white bg-[#ff3b30] text-white font-black px-2 sm:px-3 py-1 rotate-[12deg] shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] z-20 text-[10px] sm:text-sm md:text-base uppercase tracking-widest whitespace-nowrap">
+                DEPLOY READY
+              </div>
               <div className="border-[3px] border-black dark:border-white bg-white dark:bg-black aspect-[4/5] sm:aspect-[3/4] p-2 sm:p-3 shadow-[4px_4px_0_0_#000] md:shadow-[6px_6px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] dark:md:shadow-[6px_6px_0_0_#fff]">
                 <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 border-[3px] border-black dark:border-white overflow-hidden relative flex items-center justify-center">
                   <div className="text-gray-400 dark:text-gray-500 font-bold uppercase tracking-widest flex flex-col items-center">
@@ -78,11 +82,6 @@ export default function Home() {
 
           {/* Right Column (Bio & Terminal) */}
           <div className="flex flex-col relative mt-8 lg:mt-0">
-
-            {/* Sticker */}
-            <div className="absolute -top-4 right-2 sm:right-6 md:-top-10 md:left-40 md:right-auto border-[3px] border-black dark:border-white bg-[#ff3b30] text-white font-black px-2 sm:px-3 py-1 rotate-[8deg] md:rotate-[-8deg] shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] z-20 text-[10px] sm:text-sm md:text-base uppercase tracking-widest whitespace-nowrap">
-              DEPLOY READY
-            </div>
 
             {/* Header Text */}
             <div className="mb-6 relative z-10 pt-2 lg:pt-0 text-center lg:text-left">
