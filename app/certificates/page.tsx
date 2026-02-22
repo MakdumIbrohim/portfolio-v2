@@ -51,7 +51,7 @@ const certificates = [
     },
     {
         id: 2,
-        title: "Sertifikat Web Developer",
+        title: "Sertifikat Kompetensi Kemalasan",
         issuer: "IMPHNEN",
         date: "02 August 2025",
         color: "#0595d2", // IMPHNEN Blue
