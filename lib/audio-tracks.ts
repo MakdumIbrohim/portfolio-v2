@@ -11,8 +11,8 @@ export const audioTracks: AudioTrack[] = [
         id: "track-1",
         title: "Favorite Girl",
         artist: "Justin Bieber",
-        coverUrl: "/music/justin-bieber/thumbnailify.com_youtube_thumbnail_Full_HD_2026-02-22_04-41-02.jpg",
-        audioUrl: "/music/justin-bieber/Favorite Girl.mp3"
+        coverUrl: "/music/justin-bieber/favorite-girl/thumbnailify.com_youtube_thumbnail_Full_HD_2026-02-22_04-41-02.jpg",
+        audioUrl: "/music/justin-bieber/favorite-girl/Favorite%20Girl.mp3"
     },
     {
         id: "track-2",
