@@ -30,6 +30,16 @@ const certificates = [
         credentialUrl: "/certificates/dicoding/sertifikat_belajar_membuat_front-end_web_untuk_pemula.png"
     },
     {
+        id: 4,
+        title: "Belajar Dasar Pemrograman JavaScript",
+        issuer: "Dicoding Indonesia",
+        date: "16 Agustus 2025",
+        color: "#2d3e50", // Dicoding dark blue
+        icon: "/icon/dicoding/dicoding.jpeg",
+        imageUrl: "/certificates/dicoding/sertifikat_dicoding_js_dasar.png",
+        credentialUrl: "https://dicoding.com/certificates/ERZR242LQPYV"
+    },
+    {
         id: 2,
         title: "Sertifikat Web Developer",
         issuer: "IMPHNEN",
