@@ -110,19 +110,24 @@ export function AudioPlayerCard() {
     return (
         <div className="mt-8 border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] p-3 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] text-black dark:text-white flex items-center gap-3 md:gap-4 relative overflow-hidden group">
 
-            {/* Album Cover Art */}
-            <div className={`w-14 h-14 sm:w-16 sm:h-16 shrink-0 relative border-[2px] border-black dark:border-white shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] overflow-hidden ${isPlaying ? 'origin-center animate-[pulse_2s_ease-in-out_infinite]' : ''} group-hover:-translate-y-1 transition-transform`}>
-                {/* Placeholder gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#ff79c6] to-[#f8e71c]" />
+            {/* Album Cover Art (Vinyl Style) */}
+            <div className={`w-14 h-14 sm:w-16 sm:h-16 shrink-0 relative border-[3px] border-black dark:border-white rounded-full overflow-hidden ${isPlaying ? 'animate-[spin_4s_linear_infinite]' : ''}`}>
+                {/* Vinyl Grooves Background (Outer Black Ring) */}
+                <div className="absolute inset-0 bg-[#0f0f0f] rounded-full">
+                    {/* Inner grooves effect */}
+                    <div className="absolute inset-[10%] border border-gray-800 rounded-full"></div>
+                    <div className="absolute inset-[25%] border border-gray-800 rounded-full"></div>
+                </div>
 
-                {/* Actual image loaded dynamically */}
+                {/* Actual image loaded dynamically as the vinyl center label */}
                 <img
                     src={currentTrack.coverUrl}
                     alt={currentTrack.title}
-                    className="w-full h-full object-cover mix-blend-overlay opacity-80"
+                    className="absolute inset-[15%] w-[70%] h-[70%] object-cover rounded-full border border-gray-600"
                 />
 
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white dark:bg-black rounded-full border border-black dark:border-white z-10"></div>
+                {/* Decorative CD/Vinyl hole in the absolute middle */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 sm:w-3 sm:h-3 bg-white dark:bg-[#1a1a1a] rounded-full border border-black z-10"></div>
             </div>
 
             {/* Track Info & Progress */}
