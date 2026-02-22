@@ -1,4 +1,5 @@
 import React from 'react';
+import { GraduationCap, Laptop, Settings } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -27,7 +28,7 @@ export default function Home() {
       {/* Main Content Container */}
       <main className="border-[3px] border-black p-4 md:p-8 bg-white max-w-6xl mx-auto shadow-[12px_12px_0_0_#000] relative">
         <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-8 md:gap-12 relative">
-          
+
           {/* Left Column (Profile Info) */}
           <div className="flex flex-col gap-6 relative z-10 w-full max-w-[320px] mx-auto lg:mx-0">
             {/* Profile Picture Box */}
@@ -42,7 +43,7 @@ export default function Home() {
                   {/* <img src="/makdum.jpg" alt="Makdum" className="absolute inset-0 w-full h-full object-cover grayscale" /> */}
                 </div>
               </div>
-              
+
               {/* Level Badge */}
               <div className="mt-6 border-[3px] border-black bg-[#f8e71c] font-black p-3 text-center shadow-[4px_4px_0_0_#000] uppercase tracking-wider text-sm">
                 LVL. ??? TECHNOMANCER
@@ -73,29 +74,29 @@ export default function Home() {
 
           {/* Right Column (Bio & Terminal) */}
           <div className="flex flex-col relative">
-            
+
             {/* Sticker Top Left overlapping name slightly */}
             <div className="absolute -top-5 md:-top-10 left-0 md:left-40 border-[3px] border-black bg-[#ff3b30] text-white font-black px-3 py-1 rotate-[-8deg] shadow-[4px_4px_0_0_#000] z-20 text-sm md:text-base uppercase tracking-widest whitespace-nowrap">
               DEPLOY READY
             </div>
-            
+
             {/* Header Text */}
             <div className="mb-6 relative z-10 pt-4 md:pt-0">
               <h1 className="text-5xl md:text-7xl lg:text-[5rem] font-black leading-[0.9] uppercase tracking-tighter">
                 MAKDUM <br />
                 <span className="text-[#4a90e2]">IBROHIM</span>
               </h1>
-              
+
               {/* Role Badges */}
               <div className="flex flex-wrap gap-3 mt-6 font-bold text-xs md:text-sm uppercase tracking-wider">
-                <div className="border-[3px] border-black bg-[#50e3c2] px-3 py-1.5 shadow-[4px_4px_0_0_#000]">
-                  TEACHER 👨‍🏫
+                <div className="border-[3px] border-black bg-[#50e3c2] px-3 py-1.5 shadow-[4px_4px_0_0_#000] flex items-center gap-2">
+                  TEACHER <GraduationCap size={16} strokeWidth={2.5} />
                 </div>
-                <div className="border-[3px] border-black bg-[#4a90e2] text-white px-3 py-1.5 shadow-[4px_4px_0_0_#000]">
-                  FULLSTACK 💻
+                <div className="border-[3px] border-black bg-[#4a90e2] text-white px-3 py-1.5 shadow-[4px_4px_0_0_#000] flex items-center gap-2">
+                  FULLSTACK <Laptop size={16} strokeWidth={2.5} />
                 </div>
-                <div className="border-[3px] border-black bg-[#ff3b30] text-white px-3 py-1.5 shadow-[4px_4px_0_0_#000]">
-                  DEVOPS ⚙️
+                <div className="border-[3px] border-black bg-[#ff3b30] text-white px-3 py-1.5 shadow-[4px_4px_0_0_#000] flex items-center gap-2">
+                  DEVOPS <Settings size={16} strokeWidth={2.5} />
                 </div>
               </div>
             </div>
@@ -105,7 +106,7 @@ export default function Home() {
 
             {/* Terminal Window */}
             <div className="border-[3px] border-black bg-white shadow-[8px_8px_0_0_#000] flex-1 flex flex-col relative overflow-hidden">
-              
+
               {/* Terminal Title Bar */}
               <div className="border-b-[3px] border-black bg-[#4a90e2] p-2 flex items-center justify-between font-mono text-white text-xs md:text-sm font-bold">
                 <div className="flex items-center gap-2">
@@ -117,7 +118,7 @@ export default function Home() {
                   <div className="w-3.5 h-3.5 rounded-full border-2 border-black bg-[#50e3c2]"></div>
                 </div>
               </div>
-              
+
               {/* Terminal Content */}
               <div className="p-5 md:p-8 font-mono text-sm md:text-base leading-relaxed bg-[#fdfdfd] flex-1">
                 <div className="mb-5">
@@ -125,14 +126,14 @@ export default function Home() {
                     $ whoami
                   </span>
                 </div>
-                
+
                 <p className="mb-5 font-medium">
                   I am Makdum. By day, I empower students to become software engineers. By night, I retreat to my Homelab to manage bare-metal infrastructure.
                 </p>
                 <p className="mb-8 font-medium">
                   I have a passion for enterprise web development and problem-solving—though production outages still test my patience. Currently optimizing my workflow to bypass expensive cloud costs.
                 </p>
-                
+
                 <div className="mb-3 font-bold uppercase tracking-widest">
                   <span className="border-b-2 border-black pb-1">TECH ARSENAL:</span>
                 </div>
@@ -143,14 +144,14 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
-                
+
                 <div className="mt-auto pt-4 flex items-center">
                   <span className="text-black font-bold">root@makdum-server:~# </span>
                   <span className="w-2.5 h-5 bg-black ml-2 animate-pulse inline-block align-text-bottom"></span>
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
       </main>
