@@ -56,10 +56,20 @@ export function AudioPlayerCard() {
     return (
         <div className="mt-8 border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] p-3 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] text-black dark:text-white flex items-center gap-3 md:gap-4 relative overflow-hidden group">
 
-            {/* Spinning Disc Record */}
-            <div className={`w-12 h-12 bg-black dark:bg-white rounded-full flex items-center justify-center border-[2px] border-black dark:border-white shrink-0 ${isPlaying ? 'animate-[spin_4s_linear_infinite]' : ''}`}>
-                <div className="w-4 h-4 bg-[#ff3b30] rounded-full border-[2px] border-black dark:border-white absolute z-10"></div>
-                <Disc3 size={40} className="text-[#f8e71c] dark:text-[#b8a900] opacity-80" strokeWidth={1} />
+            {/* Album Cover Art */}
+            <div className={`w-14 h-14 sm:w-16 sm:h-16 shrink-0 relative border-[2px] border-black dark:border-white shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] overflow-hidden ${isPlaying ? 'origin-center animate-[pulse_2s_ease-in-out_infinite]' : ''} group-hover:-translate-y-1 transition-transform`}>
+                {/* Placeholder gradient/image */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#ff79c6] to-[#f8e71c]" />
+
+                {/* Actual image (You can replace src with your own thumbnail) */}
+                <img
+                    src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=150&h=150&auto=format&fit=crop"
+                    alt="Album Cover"
+                    className="w-full h-full object-cover mix-blend-overlay opacity-80"
+                />
+
+                {/* Little decorative CD hole in the middle just for style */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white dark:bg-black rounded-full border border-black dark:border-white z-10"></div>
             </div>
 
             {/* Track Info & Progress */}
