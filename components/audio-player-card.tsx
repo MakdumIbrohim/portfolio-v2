@@ -9,10 +9,19 @@ export function AudioPlayerCard() {
     const [isPlaying, setIsPlaying] = useState(false);
     const [isMuted, setIsMuted] = useState(false);
     const [progress, setProgress] = useState(0);
+    const [currentTime, setCurrentTime] = useState(0);
+    const [duration, setDuration] = useState(0);
 
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
     const currentTrack = audioTracks[currentTrackIndex];
+
+    const formatTime = (time: number) => {
+        if (isNaN(time)) return "0:00";
+        const minutes = Math.floor(time / 60);
+        const seconds = Math.floor(time % 60);
+        return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    };
 
     useEffect(() => {
         // Initialize audio element with current track
@@ -30,7 +39,14 @@ export function AudioPlayerCard() {
 
         const updateProgress = () => {
             if (audioRef.current) {
+                setCurrentTime(audioRef.current.currentTime);
                 setProgress((audioRef.current.currentTime / audioRef.current.duration) * 100);
+            }
+        };
+
+        const handleLoadedMetadata = () => {
+            if (audioRef.current) {
+                setDuration(audioRef.current.duration);
             }
         };
 
@@ -39,6 +55,7 @@ export function AudioPlayerCard() {
         };
 
         audioRef.current.addEventListener('timeupdate', updateProgress);
+        audioRef.current.addEventListener('loadedmetadata', handleLoadedMetadata);
         audioRef.current.addEventListener('ended', handleEnded);
 
         // If it was playing before we switched tracks, auto-play the new one
@@ -53,6 +70,7 @@ export function AudioPlayerCard() {
             if (audioRef.current) {
                 audioRef.current.pause();
                 audioRef.current.removeEventListener('timeupdate', updateProgress);
+                audioRef.current.removeEventListener('loadedmetadata', handleLoadedMetadata);
                 audioRef.current.removeEventListener('ended', handleEnded);
             }
         };
@@ -80,11 +98,13 @@ export function AudioPlayerCard() {
         setCurrentTrackIndex((prev) => (prev + 1) % audioTracks.length);
         // Setting progress to 0 manually for immediate visual feedback
         setProgress(0);
+        setCurrentTime(0);
     };
 
     const playPrev = () => {
         setCurrentTrackIndex((prev) => (prev - 1 + audioTracks.length) % audioTracks.length);
         setProgress(0);
+        setCurrentTime(0);
     };
 
     return (
@@ -123,6 +143,12 @@ export function AudioPlayerCard() {
                         className="absolute top-0 left-0 h-full bg-[#ff3b30] border-r border-black dark:border-white transition-all duration-100"
                         style={{ width: `${progress}%` }}
                     ></div>
+                </div>
+
+                {/* Time Display */}
+                <div className="flex justify-between mt-1 font-mono text-[9px] sm:text-[10px] font-bold opacity-80">
+                    <span>{formatTime(currentTime)}</span>
+                    <span>{formatTime(duration)}</span>
                 </div>
             </div>
 
