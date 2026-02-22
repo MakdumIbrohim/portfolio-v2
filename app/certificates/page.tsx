@@ -15,15 +15,19 @@ const certificates = [
         issuer: "Dicoding Indonesia",
         date: "2024",
         color: "#2d3e50", // Dicoding dark blue
-        icon: "💻"
+        icon: "💻",
+        imageUrl: undefined,
+        credentialUrl: "https://www.dicoding.com"
     },
     {
         id: 2,
-        title: "Sertifikat Web Developer",
+        title: "Sertifikat Kompetensi Kemalasan",
         issuer: "IMPHNEN",
-        date: "2024",
-        color: "#4a90e2", // Blue
-        icon: "🏆"
+        date: "02 August 2025",
+        color: "#0595d2", // IMPHNEN Blue
+        icon: "🏆",
+        imageUrl: "https://raw.githubusercontent.com/MakdumIbrohim/fortofolio/main/public/sertifikat_kompetensi_kemalasan.jpg",
+        credentialUrl: "https://raw.githubusercontent.com/MakdumIbrohim/fortofolio/main/public/sertifikat_kompetensi_kemalasan.jpg"
     }
 ];
 
@@ -121,7 +125,7 @@ export default function Certificates() {
                             {certificates.filter(c => c.issuer === selectedIssuer).map((cert) => (
                                 <div
                                     key={cert.id}
-                                    className="border-[3px] border-black dark:border-white bg-[#fdfdfd] dark:bg-[#1e1e1e] shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] transition-transform hover:-translate-y-2 hover:shadow-[8px_8px_0_0_#000] dark:hover:shadow-[8px_8px_0_0_#fff] relative overflow-hidden group flex flex-col h-full"
+                                    className="border-[3px] border-black dark:border-white bg-[#fdfdfd] dark:bg-[#1e1e1e] shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] transition-transform hover:-translate-y-2 hover:shadow-[8px_8px_0_0_#000] dark:hover:shadow-[8px_8px_0_0_#fff] relative overflow-hidden group flex flex-col h-full cursor-pointer"
                                 >
                                     {/* Colorful Top Banner indicating technology */}
                                     <div
@@ -129,13 +133,26 @@ export default function Certificates() {
                                         style={{ backgroundColor: cert.color }}
                                     ></div>
 
-                                    <div className="p-5 sm:p-6 flex flex-col flex-1 relative">
-                                        {/* Large Background Icon */}
-                                        <div className="absolute right-4 bottom-4 text-6xl opacity-10 group-hover:scale-125 transition-transform duration-500 pointer-events-none grayscale group-hover:grayscale-0">
-                                            {cert.icon}
+                                    {/* Certificate Image if available */}
+                                    {cert.imageUrl ? (
+                                        <div className="relative w-full aspect-[4/3] border-b-[3px] border-black dark:border-white overflow-hidden bg-gray-100 dark:bg-gray-800">
+                                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                                            <img
+                                                src={cert.imageUrl}
+                                                alt={`Certificate for ${cert.title}`}
+                                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 hover:scale-105"
+                                            />
                                         </div>
+                                    ) : null}
 
-                                        {/* Content */}
+                                    <div className="p-5 sm:p-6 flex flex-col flex-1 relative">
+                                        {/* Large Background Icon (only if no image) */}
+                                        {!cert.imageUrl && (
+                                            <div className="absolute right-4 bottom-4 text-6xl opacity-10 group-hover:scale-125 transition-transform duration-500 pointer-events-none grayscale group-hover:grayscale-0">
+                                                {cert.icon}
+                                            </div>
+                                        )}
+
                                         <div className="flex justify-between items-start mb-4 relative z-10">
                                             <div className="bg-black dark:bg-white text-white dark:text-black font-black text-xs sm:text-sm px-3 py-1 uppercase tracking-widest inline-block border-[2px] border-black dark:border-white">
                                                 {cert.date}
@@ -151,9 +168,20 @@ export default function Certificates() {
                                         </p>
 
                                         <div className="mt-auto relative z-10">
-                                            <button className="border-[2px] border-black dark:border-white bg-white dark:bg-black font-bold text-xs sm:text-sm px-4 py-2 flex justify-center items-center gap-2 shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:bg-[#f8e71c] dark:hover:bg-[#b8a900] dark:hover:text-black transition-colors w-full sm:w-auto uppercase">
-                                                <ExternalLink size={16} strokeWidth={2.5} /> VIEW CREDENTIAL
-                                            </button>
+                                            {cert.credentialUrl ? (
+                                                <a
+                                                    href={cert.credentialUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="border-[2px] border-black dark:border-white bg-white dark:bg-black font-bold text-xs sm:text-sm px-4 py-2 flex justify-center items-center gap-2 shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:bg-[#f8e71c] dark:hover:bg-[#b8a900] hover:text-black dark:hover:text-black transition-colors w-full sm:w-auto uppercase inline-flex"
+                                                >
+                                                    <ExternalLink size={16} strokeWidth={2.5} /> VIEW CREDENTIAL
+                                                </a>
+                                            ) : (
+                                                <button disabled className="opacity-50 cursor-not-allowed border-[2px] border-black dark:border-white bg-white dark:bg-black font-bold text-xs sm:text-sm px-4 py-2 flex justify-center items-center gap-2 shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] w-full sm:w-auto uppercase">
+                                                    <ExternalLink size={16} strokeWidth={2.5} /> NO CREDENTIAL LINK
+                                                </button>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
