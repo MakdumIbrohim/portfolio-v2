@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { DontClickButton } from '@/components/dont-click-button';
+import { MobileMenu } from '@/components/mobile-menu';
 
 export default function Contact() {
     const [isSubmitting, setIsSubmitting] = React.useState(false);
@@ -53,18 +54,21 @@ export default function Contact() {
             )}
 
             {/* Header Navigation */}
-            <header className="border-[3px] border-black dark:border-white p-3 sm:p-4 md:p-6 mb-4 md:mb-8 bg-white dark:bg-black flex flex-col lg:flex-row items-center justify-between gap-4 max-w-6xl mx-auto shadow-[4px_4px_0_0_#000] lg:shadow-[8px_8px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] dark:lg:shadow-[8px_8px_0_0_#fff]">
-                <nav className="grid grid-cols-1 lg:flex lg:flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4 font-black text-[10px] sm:text-xs md:text-sm lg:text-base tracking-wider uppercase w-full lg:w-auto">
-                    <Link href="/" className="border-[3px] border-black dark:border-white bg-[#4a90e2] text-white px-4 sm:px-6 py-2 flex items-center justify-center gap-1 sm:gap-2 shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all w-full lg:w-auto text-center">
+            <header className="border-[3px] border-black dark:border-white p-3 sm:p-4 md:p-6 mb-4 md:mb-8 bg-white dark:bg-black flex items-center justify-between gap-4 max-w-6xl mx-auto shadow-[4px_4px_0_0_#000] lg:shadow-[8px_8px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] dark:lg:shadow-[8px_8px_0_0_#fff]">
+                {/* Desktop Nav */}
+                <nav className="hidden lg:flex justify-start gap-4 font-black text-sm lg:text-base tracking-wider uppercase">
+                    <Link href="/" className="border-[3px] border-black dark:border-white bg-[#4a90e2] text-white px-6 py-2 flex items-center justify-center gap-2 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all">
                         <span className="text-lg leading-none mt-[-2px]">←</span> BACK TO HOME
                     </Link>
-                    <Link href="/certificates" className="border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] px-4 sm:px-6 py-2 flex items-center justify-center gap-1 sm:gap-2 shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all w-full lg:w-auto text-center block">
+                    <Link href="/certificates" className="border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] px-6 py-2 flex items-center justify-center gap-2 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all">
                         CERTIFICATES
                     </Link>
                 </nav>
-                <div className="flex gap-2 sm:gap-4 w-full lg:w-auto items-stretch justify-center lg:justify-end mt-2 lg:mt-0">
+
+                <div className="flex flex-1 lg:flex-none gap-2 sm:gap-4 items-center justify-end">
                     <ThemeToggle />
                     <DontClickButton />
+                    <MobileMenu />
                 </div>
             </header>
 
