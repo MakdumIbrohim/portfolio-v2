@@ -7,8 +7,51 @@ import { ThemeToggle } from '@/components/theme-toggle';
 import { DontClickButton } from '@/components/dont-click-button';
 
 export default function Contact() {
+    const [isSubmitting, setIsSubmitting] = React.useState(false);
+    const [toast, setToast] = React.useState<{ show: boolean, message: string, type: 'success' | 'error' }>({ show: false, message: '', type: 'success' });
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch("https://formspree.io/f/xyzprkoe", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                setToast({ show: true, message: "PESAN BERHASIL TERKIRIM!", type: 'success' });
+                form.reset();
+            } else {
+                setToast({ show: true, message: "GAGAL MENGIRIM PESAN. COBA LAGI.", type: 'error' });
+            }
+        } catch (error) {
+            setToast({ show: true, message: "TERDETEKSI GANGGUAN JARINGAN.", type: 'error' });
+        } finally {
+            setIsSubmitting(false);
+            setTimeout(() => setToast({ show: false, message: '', type: 'success' }), 5000);
+        }
+    };
+
     return (
         <div className="min-h-screen bg-[#f4f4f0] dark:bg-[#1a1a1a] text-black dark:text-white p-3 sm:p-4 md:p-8 font-sans selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors duration-300">
+            {/* Custom Toast Notification */}
+            {toast.show && (
+                <div className="fixed bottom-4 right-4 z-50 animate-[slide-up_0.3s_ease-out]">
+                    <div className={`border-[3px] border-black p-4 font-black tracking-widest uppercase shadow-[4px_4px_0_0_#000] flex items-center gap-3 ${toast.type === 'success' ? 'bg-[#50e3c2] text-black' : 'bg-[#ff3b30] text-white'}`}>
+                        {toast.type === 'success' ? <Send size={20} /> : <div className="w-5 h-5 flex items-center justify-center border-2 border-current rounded-full">!</div>}
+                        {toast.message}
+                    </div>
+                </div>
+            )}
+
             {/* Header Navigation */}
             <header className="border-[3px] border-black dark:border-white p-3 sm:p-4 md:p-6 mb-4 md:mb-8 bg-white dark:bg-black flex flex-col lg:flex-row items-center justify-between gap-4 max-w-6xl mx-auto shadow-[4px_4px_0_0_#000] lg:shadow-[8px_8px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] dark:lg:shadow-[8px_8px_0_0_#fff]">
                 <nav className="grid grid-cols-1 lg:flex lg:flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4 font-black text-[10px] sm:text-xs md:text-sm lg:text-base tracking-wider uppercase w-full lg:w-auto">
@@ -76,7 +119,7 @@ export default function Contact() {
                     <div className="border-[3px] border-black dark:border-white bg-[#fdfdfd] dark:bg-[#1e1e1e] shadow-[4px_4px_0_0_#000] border-t-8 border-t-[#ff3b30] flex flex-col mt-4 lg:mt-0">
                         <div className="p-4 sm:p-6 md:p-8 flex flex-col flex-1">
                             <div className="flex items-center justify-between mb-6 pb-4 border-b-[3px] border-black dark:border-white border-dashed">
-                                <h2 className="font-black text-xl sm:text-2xl md:text-3xl uppercase">Transmit Sig</h2>
+                                <h2 className="font-black text-xl sm:text-2xl md:text-3xl uppercase">Kirim Sinyal</h2>
                                 <div className="flex gap-1">
                                     <div className="w-3 h-3 bg-black dark:bg-white rounded-full animate-bounce"></div>
                                     <div className="w-3 h-3 bg-black dark:bg-white rounded-full animate-bounce" style={{ animationDelay: "0.1s" }}></div>
@@ -84,26 +127,30 @@ export default function Contact() {
                                 </div>
                             </div>
 
-                            <form className="flex flex-col gap-5 flex-1" action="https://formspree.io/f/xyzprkoe" method="POST">
+                            <form className="flex flex-col gap-5 flex-1" onSubmit={handleSubmit}>
                                 <div className="flex flex-col sm:flex-row gap-5">
                                     <div className="flex-1 flex flex-col">
-                                        <label htmlFor="name" className="font-bold text-xs uppercase mb-1 tracking-widest px-1">Alias/Name</label>
-                                        <input type="text" id="name" name="name" required placeholder="GUEST USER" className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#f8e71c] focus:bg-white dark:focus:bg-black transition-colors" />
+                                        <label htmlFor="name" className="font-bold text-xs uppercase mb-1 tracking-widest px-1">Nama/Alias</label>
+                                        <input type="text" id="name" name="name" required disabled={isSubmitting} placeholder="PENGGUNA TAMU" className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#f8e71c] focus:bg-white dark:focus:bg-black transition-colors disabled:opacity-50" />
                                     </div>
                                     <div className="flex-1 flex flex-col">
-                                        <label htmlFor="email" className="font-bold text-xs uppercase mb-1 tracking-widest px-1">Return Comms</label>
-                                        <input type="email" id="email" name="email" required placeholder="EMAIL ADDRESS" className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#50e3c2] focus:bg-white dark:focus:bg-black transition-colors" />
+                                        <label htmlFor="email" className="font-bold text-xs uppercase mb-1 tracking-widest px-1">Email Balasan</label>
+                                        <input type="email" id="email" name="email" required disabled={isSubmitting} placeholder="ALAMAT EMAIL" className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#50e3c2] focus:bg-white dark:focus:bg-black transition-colors disabled:opacity-50" />
                                     </div>
                                 </div>
 
                                 <div className="flex flex-col flex-1">
-                                    <label htmlFor="message" className="font-bold text-xs uppercase mb-1 tracking-widest px-1">Payload</label>
-                                    <textarea id="message" name="message" required placeholder="ENTER MESSAGE PROTOCOL HERE..." className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm h-40 sm:h-48 resize-none focus:outline-none focus:ring-2 focus:ring-[#4a90e2] focus:bg-white dark:focus:bg-black transition-colors flex-1" />
+                                    <label htmlFor="message" className="font-bold text-xs uppercase mb-1 tracking-widest px-1">Isi Pesan</label>
+                                    <textarea id="message" name="message" required disabled={isSubmitting} placeholder="MASUKKAN PROTOKOL PESAN DI SINI..." className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm h-40 sm:h-48 resize-none focus:outline-none focus:ring-2 focus:ring-[#4a90e2] focus:bg-white dark:focus:bg-black transition-colors flex-1 disabled:opacity-50" />
                                 </div>
 
-                                <button type="submit" className="border-[3px] border-black dark:border-white bg-black dark:bg-white text-white dark:text-black font-black text-lg p-4 mt-2 shadow-[4px_4px_0_0_#ff3b30] hover:translate-y-[2px] transition-transform active:shadow-[1px_1px_0_0_#ff3b30] active:translate-y-[4px] flex justify-center items-center gap-2 group">
-                                    <Send className="w-5 h-5 group-hover:translate-x-1 group-active:translate-x-2 transition-transform" strokeWidth={2.5} />
-                                    ENGAGE TRANSMISSION
+                                <button type="submit" disabled={isSubmitting} className="border-[3px] border-black dark:border-white bg-black dark:bg-white text-white dark:text-black font-black text-lg p-4 mt-2 shadow-[4px_4px_0_0_#ff3b30] hover:translate-y-[2px] transition-transform active:shadow-[1px_1px_0_0_#ff3b30] active:translate-y-[4px] flex justify-center items-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed">
+                                    {isSubmitting ? (
+                                        <div className="w-5 h-5 border-2 border-white dark:border-black border-t-transparent rounded-full animate-spin"></div>
+                                    ) : (
+                                        <Send className="w-5 h-5 group-hover:translate-x-1 group-active:translate-x-2 transition-transform" strokeWidth={2.5} />
+                                    )}
+                                    {isSubmitting ? "MENGIRIM..." : "KIRIM PESAN"}
                                 </button>
                             </form>
                         </div>
