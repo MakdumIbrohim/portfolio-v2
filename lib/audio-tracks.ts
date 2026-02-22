@@ -9,10 +9,10 @@ export interface AudioTrack {
 export const audioTracks: AudioTrack[] = [
     {
         id: "track-1",
-        title: "Lofi Work Vibes",
-        artist: "Unknown Hacker",
-        coverUrl: "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=150&h=150&auto=format&fit=crop",
-        audioUrl: "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=lofi-study-112191.mp3"
+        title: "Favorite Girl",
+        artist: "Justin Bieber",
+        coverUrl: "/music/justin-bieber/thumbnailify.com_youtube_thumbnail_Full_HD_2026-02-22_04-41-02.jpg",
+        audioUrl: "/music/justin-bieber/Favorite Girl.mp3"
     },
     {
         id: "track-2",
