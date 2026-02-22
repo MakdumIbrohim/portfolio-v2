@@ -34,5 +34,12 @@ export const audioTracks: AudioTrack[] = [
         artist: "Justin Bieber",
         coverUrl: "/music/justin-bieber/baby/https___images.genius.com_01dfdad244aaade8895f737ef1b15562.565x565x1.jpg",
         audioUrl: "/music/justin-bieber/baby/Justin%20Bieber%20-%20Baby%20ft.%20Ludacris.mp3"
+    },
+    {
+        id: "track-5",
+        title: "Monokrom",
+        artist: "Tulus",
+        coverUrl: "/music/tulus/monokrom/monokrom.png",
+        audioUrl: "/music/tulus/monokrom/TULUS%20-%20Monokrom%20(Official%20Music%20Video).mp3"
     }
 ];
