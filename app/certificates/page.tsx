@@ -15,17 +15,17 @@ const certificates = [
         issuer: "Dicoding Indonesia",
         date: "2024",
         color: "#2d3e50", // Dicoding dark blue
-        icon: "💻",
+        icon: "/icon/dicoding/dicoding.jpeg",
         imageUrl: undefined,
         credentialUrl: "https://www.dicoding.com"
     },
     {
         id: 2,
-        title: "Sertifikat Kompetensi Kemalasan",
+        title: "Sertifikat Web Developer",
         issuer: "IMPHNEN",
         date: "02 August 2025",
         color: "#0595d2", // IMPHNEN Blue
-        icon: "🏆",
+        icon: "/icon/imphnen/imphnen.png",
         imageUrl: "https://raw.githubusercontent.com/MakdumIbrohim/fortofolio/main/public/sertifikat_kompetensi_kemalasan.jpg",
         credentialUrl: "https://raw.githubusercontent.com/MakdumIbrohim/fortofolio/main/public/sertifikat_kompetensi_kemalasan.jpg"
     }
@@ -95,8 +95,12 @@ export default function Certificates() {
                                     className="absolute top-0 left-0 right-0 h-3 border-b-[3px] border-black dark:border-white transition-colors"
                                     style={{ backgroundColor: issuerGroup.color }}
                                 ></div>
-                                <div className="text-6xl mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
-                                    {issuerGroup.icon}
+                                <div className="text-6xl mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 flex items-center justify-center min-h-[80px] sm:min-h-[120px]">
+                                    {issuerGroup.icon.startsWith('/') ? (
+                                        <img src={issuerGroup.icon} alt={issuerGroup.name} className="h-24 sm:h-32 w-auto object-contain drop-shadow-sm" />
+                                    ) : (
+                                        issuerGroup.icon
+                                    )}
                                 </div>
                                 <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight mb-4 group-hover:text-[#4a90e2] transition-colors">
                                     {issuerGroup.name}
@@ -149,7 +153,11 @@ export default function Certificates() {
                                         {/* Large Background Icon (only if no image) */}
                                         {!cert.imageUrl && (
                                             <div className="absolute right-4 bottom-4 text-6xl opacity-10 group-hover:scale-125 transition-transform duration-500 pointer-events-none grayscale group-hover:grayscale-0">
-                                                {cert.icon}
+                                                {cert.icon.startsWith('/') ? (
+                                                    <img src={cert.icon} alt={cert.issuer} className="w-24 h-24 object-contain opacity-50" />
+                                                ) : (
+                                                    cert.icon
+                                                )}
                                             </div>
                                         )}
 
