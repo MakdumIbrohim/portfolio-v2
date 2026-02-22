@@ -27,5 +27,12 @@ export const audioTracks: AudioTrack[] = [
         artist: "Justin Bieber",
         coverUrl: "/music/justin-bieber/love-me/maxresdefault.jpg",
         audioUrl: "/music/justin-bieber/love-me/Justin%20Bieber%20-%20Love%20Me.mp3"
+    },
+    {
+        id: "track-4",
+        title: "Baby ft. Ludacris",
+        artist: "Justin Bieber",
+        coverUrl: "/music/justin-bieber/baby/https___images.genius.com_01dfdad244aaade8895f737ef1b15562.565x565x1.jpg",
+        audioUrl: "/music/justin-bieber/baby/Justin%20Bieber%20-%20Baby%20ft.%20Ludacris.mp3"
     }
 ];
