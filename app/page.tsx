@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Briefcase, Laptop, Settings, Smartphone } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { DontClickButton } from '@/components/dont-click-button';
+import { AudioPlayerCard } from '@/components/audio-player-card';
 
 export default function Home() {
   return (
@@ -102,6 +103,9 @@ export default function Home() {
                   MOBILE DEV<Smartphone size={14} className="sm:w-4 sm:h-4" strokeWidth={2.5} />
                 </div>
               </div>
+
+              {/* Lofi Audio Player Component */}
+              <AudioPlayerCard />
             </div>
 
             {/* Dashed Separator */}
