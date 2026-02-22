@@ -23,9 +23,9 @@ export const audioTracks: AudioTrack[] = [
     },
     {
         id: "track-3",
-        title: "Chill Coding Time",
-        artist: "Dev Beats",
-        coverUrl: "https://images.unsplash.com/photo-1534073307584-07fa481e186e?q=80&w=150&h=150&auto=format&fit=crop",
-        audioUrl: "https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8b8175782.mp3?filename=lofi-chill-medium-version-100236.mp3"
+        title: "Love Me",
+        artist: "Justin Bieber",
+        coverUrl: "/music/justin-bieber/love-me/maxresdefault.jpg",
+        audioUrl: "/music/justin-bieber/love-me/Justin%20Bieber%20-%20Love%20Me.mp3"
     }
 ];
