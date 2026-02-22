@@ -39,7 +39,7 @@ export default function Home() {
             <div className="relative">
               {/* Sticker */}
               <div className="absolute -top-3 -right-3 md:-top-5 md:-right-5 border-[3px] border-black dark:border-white bg-[#ff3b30] text-white font-black px-2 sm:px-3 py-1 rotate-[12deg] shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] z-20 text-[10px] sm:text-sm md:text-base uppercase tracking-widest whitespace-nowrap">
-                DEPLOY READY
+                NO BUGS, ONLY FEATURES
               </div>
               <div className="border-[3px] border-black dark:border-white bg-white dark:bg-black aspect-[4/5] sm:aspect-[3/4] p-2 sm:p-3 shadow-[4px_4px_0_0_#000] md:shadow-[6px_6px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] dark:md:shadow-[6px_6px_0_0_#fff]">
                 <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 border-[3px] border-black dark:border-white overflow-hidden relative flex items-center justify-center">
