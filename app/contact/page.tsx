@@ -17,9 +17,9 @@ export default function Contact() {
                 </nav>
                 <div className="flex gap-2 sm:gap-4 w-full lg:w-auto items-stretch justify-center lg:justify-end mt-2 lg:mt-0">
                     <ThemeToggle />
-                    <div className="border-[3px] border-black dark:border-white bg-[#ff3b30] text-white font-black px-4 sm:px-6 py-2 shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all flex justify-center items-center gap-2 text-xs sm:text-sm md:text-base uppercase tracking-wider flex-1 lg:flex-none whitespace-nowrap">
+                    <Link href="/secret" className="border-[3px] border-black dark:border-white bg-[#ff3b30] text-white font-black px-4 sm:px-6 py-2 shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all flex justify-center items-center gap-2 text-xs sm:text-sm md:text-base uppercase tracking-wider flex-1 lg:flex-none whitespace-nowrap block">
                         <span>☠</span> <span className="hidden sm:inline">DON'T CLICK ME</span><span className="sm:hidden">DON'T CLICK</span>
-                    </div>
+                    </Link>
                 </div>
             </header>
 
