@@ -1,8 +1,8 @@
-import GlitchText from "@/components/GlitchText";
+import Button from "@/components/Button";
 export default function Home() {
   return (
     <div className="">
-      <GlitchText />
+      <Button label="Click Me" />
     </div>
   );
 }
