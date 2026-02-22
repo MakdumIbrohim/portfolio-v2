@@ -84,24 +84,24 @@ export default function Contact() {
                                 </div>
                             </div>
 
-                            <form className="flex flex-col gap-5 flex-1" onSubmit={(e) => e.preventDefault()}>
+                            <form className="flex flex-col gap-5 flex-1" action="https://formspree.io/f/xyzprkoe" method="POST">
                                 <div className="flex flex-col sm:flex-row gap-5">
                                     <div className="flex-1 flex flex-col">
-                                        <label className="font-bold text-xs uppercase mb-1 tracking-widest px-1">Alias/Name</label>
-                                        <input type="text" placeholder="GUEST USER" className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#f8e71c] focus:bg-white dark:focus:bg-black transition-colors" />
+                                        <label htmlFor="name" className="font-bold text-xs uppercase mb-1 tracking-widest px-1">Alias/Name</label>
+                                        <input type="text" id="name" name="name" required placeholder="GUEST USER" className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#f8e71c] focus:bg-white dark:focus:bg-black transition-colors" />
                                     </div>
                                     <div className="flex-1 flex flex-col">
-                                        <label className="font-bold text-xs uppercase mb-1 tracking-widest px-1">Return Comms</label>
-                                        <input type="email" placeholder="EMAIL ADDRESS" className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#50e3c2] focus:bg-white dark:focus:bg-black transition-colors" />
+                                        <label htmlFor="email" className="font-bold text-xs uppercase mb-1 tracking-widest px-1">Return Comms</label>
+                                        <input type="email" id="email" name="email" required placeholder="EMAIL ADDRESS" className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#50e3c2] focus:bg-white dark:focus:bg-black transition-colors" />
                                     </div>
                                 </div>
 
                                 <div className="flex flex-col flex-1">
-                                    <label className="font-bold text-xs uppercase mb-1 tracking-widest px-1">Payload</label>
-                                    <textarea placeholder="ENTER MESSAGE PROTOCOL HERE..." className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm h-40 sm:h-48 resize-none focus:outline-none focus:ring-2 focus:ring-[#4a90e2] focus:bg-white dark:focus:bg-black transition-colors flex-1" />
+                                    <label htmlFor="message" className="font-bold text-xs uppercase mb-1 tracking-widest px-1">Payload</label>
+                                    <textarea id="message" name="message" required placeholder="ENTER MESSAGE PROTOCOL HERE..." className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm h-40 sm:h-48 resize-none focus:outline-none focus:ring-2 focus:ring-[#4a90e2] focus:bg-white dark:focus:bg-black transition-colors flex-1" />
                                 </div>
 
-                                <button className="border-[3px] border-black dark:border-white bg-black dark:bg-white text-white dark:text-black font-black text-lg p-4 mt-2 shadow-[4px_4px_0_0_#ff3b30] hover:translate-y-[2px] transition-transform active:shadow-[1px_1px_0_0_#ff3b30] active:translate-y-[4px] flex justify-center items-center gap-2 group">
+                                <button type="submit" className="border-[3px] border-black dark:border-white bg-black dark:bg-white text-white dark:text-black font-black text-lg p-4 mt-2 shadow-[4px_4px_0_0_#ff3b30] hover:translate-y-[2px] transition-transform active:shadow-[1px_1px_0_0_#ff3b30] active:translate-y-[4px] flex justify-center items-center gap-2 group">
                                     <Send className="w-5 h-5 group-hover:translate-x-1 group-active:translate-x-2 transition-transform" strokeWidth={2.5} />
                                     ENGAGE TRANSMISSION
                                 </button>
