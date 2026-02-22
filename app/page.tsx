@@ -16,9 +16,9 @@ export default function Home() {
           <div className="border-[3px] border-black dark:border-white bg-[#f8e71c] dark:bg-[#b8a900] px-2 sm:px-4 py-2 flex items-center justify-center shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all text-black dark:text-white w-full lg:w-auto text-center">
             PROJECTS
           </div>
-          <div className="border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] px-2 sm:px-4 py-2 flex items-center justify-center shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all text-black dark:text-white w-full lg:w-auto text-center">
+          <Link href="/certificates" className="border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] px-2 sm:px-4 py-2 flex items-center justify-center shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all text-black dark:text-white w-full lg:w-auto text-center block">
             CERTIFICATES
-          </div>
+          </Link>
           <Link href="/contact" className="border-[3px] border-black dark:border-white bg-[#ff79c6] dark:bg-[#b83280] px-2 sm:px-4 py-2 flex items-center justify-center shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all text-black dark:text-white w-full lg:w-auto text-center block">
             CONTACT
           </Link>
