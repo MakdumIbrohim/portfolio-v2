@@ -69,11 +69,11 @@ export default function Home() {
               <div className="p-3 sm:p-4 font-mono text-[10px] sm:text-xs md:text-sm space-y-2 sm:space-y-3 bg-[#fff9db] dark:bg-[#1f1a00] dark:text-gray-300">
                 <div className="flex justify-between items-center border-b border-gray-300 dark:border-gray-600 pb-1.5 sm:pb-2">
                   <span className="font-bold whitespace-nowrap mr-2 text-black dark:text-white">Processor</span>
-                  <span className="bg-black dark:bg-white text-white dark:text-black px-1.5 sm:px-2 py-0.5 whitespace-nowrap text-right max-w-[120px] sm:max-w-none truncate sm:overflow-visible">Dual AMD EPYC™</span>
+                  <span className="bg-black dark:bg-white text-white dark:text-black px-1.5 sm:px-2 py-0.5 whitespace-nowrap text-right max-w-[150px] sm:max-w-none truncate sm:overflow-visible">Intel Core i3-1115G4</span>
                 </div>
                 <div className="flex justify-between items-center border-b border-gray-300 dark:border-gray-600 pb-1.5 sm:pb-2">
                   <span className="font-bold whitespace-nowrap mr-2 text-black dark:text-white">Memory</span>
-                  <span className="bg-black dark:bg-white text-white dark:text-black px-1.5 sm:px-2 py-0.5 whitespace-nowrap">1024 GB RAM</span>
+                  <span className="bg-black dark:bg-white text-white dark:text-black px-1.5 sm:px-2 py-0.5 whitespace-nowrap">12 GB RAM</span>
                 </div>
                 <div className="flex justify-between items-center pb-0.5 sm:pb-1">
                   <span className="font-bold whitespace-nowrap mr-2 text-black dark:text-white">Status</span>
