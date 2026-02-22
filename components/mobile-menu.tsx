@@ -17,7 +17,6 @@ export function MobileMenu() {
         { name: "HOME", href: "/" },
         { name: "CERTIFICATES", href: "/certificates" },
         { name: "PROJECTS", href: "/projects" },
-        { name: "SKILLS", href: "/skills" },
         { name: "CONTACT", href: "/contact" }
     ];
 
@@ -56,8 +55,8 @@ export function MobileMenu() {
                                         href={link.href}
                                         onClick={() => setIsOpen(false)}
                                         className={`p-4 font-black text-sm tracking-wider uppercase border-b-[3px] border-black dark:border-white last:border-b-0 hover:bg-[#ff79c6] dark:hover:bg-[#b83280] hover:text-white transition-colors flex items-center justify-between ${isActive
-                                                ? "bg-[#50e3c2] dark:bg-[#008f6b] text-black dark:text-white -mr-1 shadow-[-4px_0_0_0_#000] dark:shadow-[-4px_0_0_0_#fff]"
-                                                : "text-black dark:text-white"
+                                            ? "bg-[#50e3c2] dark:bg-[#008f6b] text-black dark:text-white -mr-1 shadow-[-4px_0_0_0_#000] dark:shadow-[-4px_0_0_0_#fff]"
+                                            : "text-black dark:text-white"
                                             }`}
                                     >
                                         <span>{link.name}</span>
