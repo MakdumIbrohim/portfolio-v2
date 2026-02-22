@@ -137,10 +137,7 @@ export default function Home() {
                 </div>
 
                 <p className="mb-4 sm:mb-5 font-medium break-words">
-                  I am Makdum. By day, I empower students to become software engineers. By night, I retreat to my Homelab to manage bare-metal infrastructure.
-                </p>
-                <p className="mb-6 sm:mb-8 font-medium break-words">
-                  I have a passion for enterprise web development and problem-solving—though production outages still test my patience. Currently optimizing my workflow to bypass expensive cloud costs.
+                  Hai! Aku web developer yang excited banget bikin website atau aplikasi yang kece dan bisa dipake. Fokus utamaku di frontend, tapi lagi gaspol juga belajar backend. Selalu open buat tantangan baru biar makin jago!
                 </p>
 
                 <div className="mb-2 sm:mb-3 font-bold uppercase tracking-widest text-black dark:text-white text-[10px] sm:text-xs md:text-sm">
