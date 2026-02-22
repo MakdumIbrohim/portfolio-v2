@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { GraduationCap, Laptop, Settings } from 'lucide-react';
+import { Briefcase, Laptop, Settings, Smartphone } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { DontClickButton } from '@/components/dont-click-button';
 
@@ -93,13 +93,13 @@ export default function Home() {
               {/* Role Badges */}
               <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 mt-4 sm:mt-6 font-bold text-[10px] sm:text-xs md:text-sm uppercase tracking-wider">
                 <div className="border-[2px] sm:border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] text-black dark:text-white px-2 sm:px-3 py-1 sm:py-1.5 shadow-[2px_2px_0_0_#000] sm:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] flex items-center gap-1 sm:gap-2">
-                  TEACHER <GraduationCap size={14} className="sm:w-4 sm:h-4" strokeWidth={2.5} />
+                  FREELANCER <Briefcase size={14} className="sm:w-4 sm:h-4" strokeWidth={2.5} />
                 </div>
                 <div className="border-[2px] sm:border-[3px] border-black dark:border-white bg-[#4a90e2] text-white px-2 sm:px-3 py-1 sm:py-1.5 shadow-[2px_2px_0_0_#000] sm:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] flex items-center gap-1 sm:gap-2">
                   FULLSTACK <Laptop size={14} className="sm:w-4 sm:h-4" strokeWidth={2.5} />
                 </div>
                 <div className="border-[2px] sm:border-[3px] border-black dark:border-white bg-[#ff3b30] text-white px-2 sm:px-3 py-1 sm:py-1.5 shadow-[2px_2px_0_0_#000] sm:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] flex items-center gap-1 sm:gap-2">
-                  DEVOPS <Settings size={14} className="sm:w-4 sm:h-4" strokeWidth={2.5} />
+                  MOBILE DEV<Smartphone size={14} className="sm:w-4 sm:h-4" strokeWidth={2.5} />
                 </div>
               </div>
             </div>
