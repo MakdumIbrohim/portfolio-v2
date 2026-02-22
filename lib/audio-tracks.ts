@@ -16,10 +16,10 @@ export const audioTracks: AudioTrack[] = [
     },
     {
         id: "track-2",
-        title: "Cyberpunk City Nights",
-        artist: "Neon Synth",
-        coverUrl: "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=150&h=150&auto=format&fit=crop",
-        audioUrl: "https://cdn.pixabay.com/download/audio/2022/10/25/audio_5128ff3a86.mp3?filename=cyberpunk-2099-124953.mp3"
+        title: "It's Only Me",
+        artist: "Kaleb J",
+        coverUrl: "/music/kaleb-j/its-only-me/thumbnailify.com_youtube_thumbnail_Full_HD_2026-02-22_04-51-41.jpg",
+        audioUrl: "/music/kaleb-j/its-only-me/Kaleb J - It's Only Me Official Lyric Video (English Sub CC).mp3"
     },
     {
         id: "track-3",
