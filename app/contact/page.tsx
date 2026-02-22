@@ -119,7 +119,7 @@ export default function Contact() {
                     <div className="border-[3px] border-black dark:border-white bg-[#fdfdfd] dark:bg-[#1e1e1e] shadow-[4px_4px_0_0_#000] border-t-8 border-t-[#ff3b30] flex flex-col mt-4 lg:mt-0">
                         <div className="p-4 sm:p-6 md:p-8 flex flex-col flex-1">
                             <div className="flex items-center justify-between mb-6 pb-4 border-b-[3px] border-black dark:border-white border-dashed">
-                                <h2 className="font-black text-xl sm:text-2xl md:text-3xl uppercase">Kirim Sinyal</h2>
+                                <h2 className="font-black text-xl sm:text-2xl md:text-3xl uppercase">SEND PAYLOAD</h2>
                                 <div className="flex gap-1">
                                     <div className="w-3 h-3 bg-black dark:bg-white rounded-full animate-bounce"></div>
                                     <div className="w-3 h-3 bg-black dark:bg-white rounded-full animate-bounce" style={{ animationDelay: "0.1s" }}></div>
@@ -131,17 +131,17 @@ export default function Contact() {
                                 <div className="flex flex-col sm:flex-row gap-5">
                                     <div className="flex-1 flex flex-col">
                                         <label htmlFor="name" className="font-bold text-xs uppercase mb-1 tracking-widest px-1">Nama/Alias</label>
-                                        <input type="text" id="name" name="name" required disabled={isSubmitting} placeholder="PENGGUNA TAMU" className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#f8e71c] focus:bg-white dark:focus:bg-black transition-colors disabled:opacity-50" />
+                                        <input type="text" id="name" name="name" required disabled={isSubmitting} placeholder="GUEST USER" className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#f8e71c] focus:bg-white dark:focus:bg-black transition-colors disabled:opacity-50" />
                                     </div>
                                     <div className="flex-1 flex flex-col">
                                         <label htmlFor="email" className="font-bold text-xs uppercase mb-1 tracking-widest px-1">Email Balasan</label>
-                                        <input type="email" id="email" name="email" required disabled={isSubmitting} placeholder="ALAMAT EMAIL" className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#50e3c2] focus:bg-white dark:focus:bg-black transition-colors disabled:opacity-50" />
+                                        <input type="email" id="email" name="email" required disabled={isSubmitting} placeholder="EMAIL ADDRESS" className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#50e3c2] focus:bg-white dark:focus:bg-black transition-colors disabled:opacity-50" />
                                     </div>
                                 </div>
 
                                 <div className="flex flex-col flex-1">
                                     <label htmlFor="message" className="font-bold text-xs uppercase mb-1 tracking-widest px-1">Isi Pesan</label>
-                                    <textarea id="message" name="message" required disabled={isSubmitting} placeholder="MASUKKAN PROTOKOL PESAN DI SINI..." className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm h-40 sm:h-48 resize-none focus:outline-none focus:ring-2 focus:ring-[#4a90e2] focus:bg-white dark:focus:bg-black transition-colors flex-1 disabled:opacity-50" />
+                                    <textarea id="message" name="message" required disabled={isSubmitting} placeholder="ENTER MESSAGE PROTOCOL HERE..." className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm h-40 sm:h-48 resize-none focus:outline-none focus:ring-2 focus:ring-[#4a90e2] focus:bg-white dark:focus:bg-black transition-colors flex-1 disabled:opacity-50" />
                                 </div>
 
                                 <button type="submit" disabled={isSubmitting} className="border-[3px] border-black dark:border-white bg-black dark:bg-white text-white dark:text-black font-black text-lg p-4 mt-2 shadow-[4px_4px_0_0_#ff3b30] hover:translate-y-[2px] transition-transform active:shadow-[1px_1px_0_0_#ff3b30] active:translate-y-[4px] flex justify-center items-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed">
