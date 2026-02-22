@@ -126,7 +126,7 @@ export default function Home() {
               <div className="p-3 sm:p-5 md:p-8 font-mono text-xs sm:text-sm md:text-base leading-relaxed sm:leading-relaxed bg-[#fdfdfd] dark:bg-[#121212] flex-1 text-black dark:text-gray-300 overflow-x-auto">
                 <div className="mb-4 sm:mb-5 max-w-full overflow-hidden">
                   <span className="bg-[#f8e71c] dark:bg-[#b8a900] px-1.5 sm:px-2 py-0.5 font-bold text-black border-[2px] border-black dark:border-white shadow-[1px_1px_0_0_#000] sm:shadow-[2px_2px_0_0_#000] dark:shadow-[1px_1px_0_0_#fff] dark:text-white inline-block">
-                    $ whoami
+                    $ ./makdum --info
                   </span>
                 </div>
 
