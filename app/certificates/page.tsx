@@ -13,11 +13,21 @@ const certificates = [
         id: 1,
         title: "Belajar Dasar Pemrograman Web",
         issuer: "Dicoding Indonesia",
-        date: "2024",
+        date: "17 Agustus 2025",
         color: "#2d3e50", // Dicoding dark blue
         icon: "/icon/dicoding/dicoding.jpeg",
         imageUrl: "/certificates/dicoding/sertifikat_belajar_dasar_pemrograman_web.png",
         credentialUrl: "/certificates/dicoding/sertifikat_belajar_dasar_pemrograman_web.png"
+    },
+    {
+        id: 3,
+        title: "Belajar Membuat Front-End Web untuk Pemula",
+        issuer: "Dicoding Indonesia",
+        date: "17 Agustus 2025",
+        color: "#2d3e50", // Dicoding dark blue
+        icon: "/icon/dicoding/dicoding.jpeg",
+        imageUrl: "/certificates/dicoding/sertifikat_belajar_membuat_front-end_web_untuk_pemula.png",
+        credentialUrl: "/certificates/dicoding/sertifikat_belajar_membuat_front-end_web_untuk_pemula.png"
     },
     {
         id: 2,
