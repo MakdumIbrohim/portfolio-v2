@@ -16,8 +16,8 @@ const certificates = [
         date: "2024",
         color: "#2d3e50", // Dicoding dark blue
         icon: "/icon/dicoding/dicoding.jpeg",
-        imageUrl: undefined,
-        credentialUrl: "https://www.dicoding.com"
+        imageUrl: "/certificates/dicoding/sertifikat_belajar_dasar_pemrograman_web.png",
+        credentialUrl: "/certificates/dicoding/sertifikat_belajar_dasar_pemrograman_web.png"
     },
     {
         id: 2,
