@@ -11,39 +11,25 @@ import { MobileMenu } from '@/components/mobile-menu';
 const certificates = [
     {
         id: 1,
-        title: "AWS Certified Solutions Architect",
-        issuer: "Amazon Web Services",
+        title: "Belajar Dasar Pemrograman Web",
+        issuer: "Dicoding Indonesia",
         date: "2024",
-        color: "#ff9900", // AWS Orange
-        icon: "☁️"
+        color: "#2d3e50", // Dicoding dark blue
+        icon: "💻"
     },
     {
         id: 2,
-        title: "Fullstack React Native Bootcamp",
-        issuer: "CodeAcademy",
-        date: "2023",
-        color: "#61dafb", // React Blue
-        icon: "📱"
-    },
-    {
-        id: 3,
-        title: "Advanced Laravel Masterclass",
-        issuer: "Laracasts",
-        date: "2023",
-        color: "#ff2d20", // Laravel Red
-        icon: "🐘"
-    },
-    {
-        id: 4,
-        title: "Docker Certified Associate",
-        issuer: "Docker Inc.",
-        date: "2022",
-        color: "#2496ed", // Docker Blue
-        icon: "🐳"
-    },
+        title: "Sertifikat Web Developer",
+        issuer: "IMPHNEN",
+        date: "2024",
+        color: "#4a90e2", // Blue
+        icon: "🏆"
+    }
 ];
 
 export default function Certificates() {
+    const [selectedIssuer, setSelectedIssuer] = React.useState<string | null>(null);
+
     return (
         <div className="min-h-screen bg-[#f4f4f0] dark:bg-[#1a1a1a] text-black dark:text-white p-3 sm:p-4 md:p-8 font-sans selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors duration-300">
             {/* Header Navigation */}
@@ -79,49 +65,102 @@ export default function Certificates() {
                     </p>
                 </div>
 
-                {/* Certificates Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
-                    {certificates.map((cert) => (
-                        <div
-                            key={cert.id}
-                            className="border-[3px] border-black dark:border-white bg-[#fdfdfd] dark:bg-[#1e1e1e] shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] transition-transform hover:-translate-y-2 hover:shadow-[8px_8px_0_0_#000] relative overflow-hidden group flex flex-col h-full"
-                        >
-                            {/* Colorful Top Banner indicating technology */}
-                            <div
-                                className="h-3 w-full border-b-[3px] border-black dark:border-white"
-                                style={{ backgroundColor: cert.color }}
-                            ></div>
-
-                            <div className="p-5 sm:p-6 flex flex-col flex-1 relative">
-                                {/* Large Background Icon */}
-                                <div className="absolute right-4 bottom-4 text-6xl opacity-10 group-hover:scale-125 transition-transform duration-500 pointer-events-none grayscale group-hover:grayscale-0">
-                                    {cert.icon}
+                {/* Certificates Issuers Grid or Specific Issuer View */}
+                {!selectedIssuer ? (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 animate-[slide-up_0.3s_ease-out]">
+                        {Object.values(
+                            certificates.reduce((acc, cert) => {
+                                if (!acc[cert.issuer]) {
+                                    acc[cert.issuer] = {
+                                        name: cert.issuer,
+                                        certs: [],
+                                        color: cert.color,
+                                        icon: cert.icon
+                                    };
+                                }
+                                acc[cert.issuer].certs.push(cert);
+                                return acc;
+                            }, {} as Record<string, { name: string, certs: typeof certificates, color: string, icon: string }>)
+                        ).map((issuerGroup) => (
+                            <button
+                                key={issuerGroup.name}
+                                onClick={() => setSelectedIssuer(issuerGroup.name)}
+                                className="border-[3px] border-black dark:border-white bg-[#fdfdfd] dark:bg-[#1e1e1e] shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] transition-transform hover:-translate-y-2 hover:shadow-[8px_8px_0_0_#000] dark:hover:shadow-[8px_8px_0_0_#fff] relative overflow-hidden group flex flex-col items-center justify-center p-8 sm:p-10 text-center min-h-[250px] cursor-pointer w-full focus:outline-none focus:ring-4 focus:ring-[#f8e71c]"
+                            >
+                                <div
+                                    className="absolute top-0 left-0 right-0 h-3 border-b-[3px] border-black dark:border-white transition-colors"
+                                    style={{ backgroundColor: issuerGroup.color }}
+                                ></div>
+                                <div className="text-6xl mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                                    {issuerGroup.icon}
                                 </div>
+                                <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight mb-4 group-hover:text-[#4a90e2] transition-colors">
+                                    {issuerGroup.name}
+                                </h2>
+                                <div className="bg-black dark:bg-white text-white dark:text-black font-black text-xs px-3 py-1 uppercase tracking-widest border-[2px] border-black dark:border-white mt-auto inline-block">
+                                    {issuerGroup.certs.length} CREDENTIAL{issuerGroup.certs.length !== 1 ? 'S' : ''}
+                                </div>
+                            </button>
+                        ))}
+                    </div>
+                ) : (
+                    <div className="flex flex-col gap-8 animate-[slide-up_0.3s_ease-out]">
+                        <div className="flex justify-between items-center sm:items-start flex-col sm:flex-row gap-4 border-b-[3px] border-black dark:border-white border-dashed pb-6">
+                            <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight border-[3px] border-black dark:border-white p-3 inline-block bg-[#f8e71c] dark:bg-[#b8a900] text-black shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff]">
+                                🏢 {selectedIssuer}
+                            </h2>
+                            <button
+                                onClick={() => setSelectedIssuer(null)}
+                                className="border-[3px] border-black dark:border-white bg-[#ff79c6] dark:bg-[#b83280] text-white px-4 py-3 font-black text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_#000] dark:hover:shadow-[2px_2px_0_0_#fff] transition-all w-full sm:w-auto"
+                            >
+                                <span className="text-lg leading-none mt-[-2px]">←</span> BACK TO ISSUERS
+                            </button>
+                        </div>
 
-                                {/* Content */}
-                                <div className="flex justify-between items-start mb-4 relative z-10">
-                                    <div className="bg-black dark:bg-white text-white dark:text-black font-black text-xs sm:text-sm px-3 py-1 uppercase tracking-widest inline-block border-[2px] border-black dark:border-white">
-                                        {cert.date}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
+                            {certificates.filter(c => c.issuer === selectedIssuer).map((cert) => (
+                                <div
+                                    key={cert.id}
+                                    className="border-[3px] border-black dark:border-white bg-[#fdfdfd] dark:bg-[#1e1e1e] shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] transition-transform hover:-translate-y-2 hover:shadow-[8px_8px_0_0_#000] dark:hover:shadow-[8px_8px_0_0_#fff] relative overflow-hidden group flex flex-col h-full"
+                                >
+                                    {/* Colorful Top Banner indicating technology */}
+                                    <div
+                                        className="h-3 w-full border-b-[3px] border-black dark:border-white"
+                                        style={{ backgroundColor: cert.color }}
+                                    ></div>
+
+                                    <div className="p-5 sm:p-6 flex flex-col flex-1 relative">
+                                        {/* Large Background Icon */}
+                                        <div className="absolute right-4 bottom-4 text-6xl opacity-10 group-hover:scale-125 transition-transform duration-500 pointer-events-none grayscale group-hover:grayscale-0">
+                                            {cert.icon}
+                                        </div>
+
+                                        {/* Content */}
+                                        <div className="flex justify-between items-start mb-4 relative z-10">
+                                            <div className="bg-black dark:bg-white text-white dark:text-black font-black text-xs sm:text-sm px-3 py-1 uppercase tracking-widest inline-block border-[2px] border-black dark:border-white">
+                                                {cert.date}
+                                            </div>
+                                        </div>
+
+                                        <h2 className="text-xl sm:text-2xl font-black uppercase leading-tight mb-2 relative z-10 group-hover:text-[#4a90e2] transition-colors">
+                                            {cert.title}
+                                        </h2>
+
+                                        <p className="font-mono font-bold text-sm text-gray-600 dark:text-gray-400 mb-6 uppercase tracking-wider relative z-10">
+                                            ISSUER: {cert.issuer}
+                                        </p>
+
+                                        <div className="mt-auto relative z-10">
+                                            <button className="border-[2px] border-black dark:border-white bg-white dark:bg-black font-bold text-xs sm:text-sm px-4 py-2 flex justify-center items-center gap-2 shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:bg-[#f8e71c] dark:hover:bg-[#b8a900] dark:hover:text-black transition-colors w-full sm:w-auto uppercase">
+                                                <ExternalLink size={16} strokeWidth={2.5} /> VIEW CREDENTIAL
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <h2 className="text-xl sm:text-2xl font-black uppercase leading-tight mb-2 relative z-10 group-hover:text-[#4a90e2] transition-colors">
-                                    {cert.title}
-                                </h2>
-
-                                <p className="font-mono font-bold text-sm text-gray-600 dark:text-gray-400 mb-6 uppercase tracking-wider relative z-10">
-                                    ISSUER: {cert.issuer}
-                                </p>
-
-                                <div className="mt-auto relative z-10">
-                                    <button className="border-[2px] border-black dark:border-white bg-white dark:bg-black font-bold text-xs sm:text-sm px-4 py-2 flex justify-center items-center gap-2 shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:bg-[#f8e71c] dark:hover:bg-[#b8a900] dark:hover:text-black transition-colors w-full sm:w-auto uppercase">
-                                        <ExternalLink size={16} strokeWidth={2.5} /> VIEW CREDENTIAL
-                                    </button>
-                                </div>
-                            </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
+                    </div>
+                )}
 
             </main>
         </div>
