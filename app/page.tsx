@@ -54,7 +54,7 @@ export default function Home() {
 
               {/* Level Badge */}
               <div className="mt-4 md:mt-6 border-[3px] border-black dark:border-white bg-[#f8e71c] dark:bg-[#b8a900] font-black p-2 sm:p-3 text-center shadow-[3px_3px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[3px_3px_0_0_#fff] text-black dark:text-white uppercase tracking-wider text-xs sm:text-sm">
-                LVL. ??? TECHNOMANCER
+                MOBILE DEVELOPER
               </div>
             </div>
 
