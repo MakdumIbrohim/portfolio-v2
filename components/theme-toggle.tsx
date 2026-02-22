@@ -12,7 +12,7 @@ export function ThemeToggle() {
 
     if (!mounted) {
         return (
-            <button className="border-[3px] border-black bg-white dark:bg-black dark:border-white p-2 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] w-[46px] h-[46px] flex items-center justify-center">
+            <button className="border-[3px] border-black bg-white dark:bg-black dark:border-white px-3 sm:px-4 py-2 shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] flex items-center justify-center opacity-0">
                 <span className="sr-only">Toggle theme</span>
             </button>
         )
