@@ -7,21 +7,21 @@ export default function Home() {
     <div className="min-h-screen bg-[#f4f4f0] dark:bg-[#1a1a1a] text-black dark:text-white p-3 sm:p-4 md:p-8 font-sans selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors duration-300">
       {/* Header Navigation */}
       <header className="border-[3px] border-black dark:border-white p-3 sm:p-4 md:p-6 mb-4 md:mb-8 bg-white dark:bg-black flex flex-col lg:flex-row items-center justify-between gap-4 max-w-6xl mx-auto shadow-[4px_4px_0_0_#000] lg:shadow-[8px_8px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] dark:lg:shadow-[8px_8px_0_0_#fff]">
-        <nav className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4 font-black text-xs sm:text-sm md:text-base tracking-wider uppercase w-full lg:w-auto">
-          <div className="border-[3px] border-black dark:border-white bg-[#4a90e2] text-white px-3 sm:px-4 py-2 flex items-center gap-2 shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all">
+        <nav className="grid grid-cols-2 lg:flex lg:flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4 font-black text-[10px] sm:text-xs md:text-sm lg:text-base tracking-wider uppercase w-full lg:w-auto">
+          <div className="border-[3px] border-black dark:border-white bg-[#4a90e2] text-white px-2 sm:px-4 py-2 flex items-center justify-center gap-1 sm:gap-2 shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all w-full lg:w-auto text-center">
             <span>★</span> PROFILE <span>★</span>
           </div>
-          <div className="border-[3px] border-black dark:border-white bg-[#f8e71c] dark:bg-[#b8a900] px-3 sm:px-4 py-2 shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all text-black dark:text-white">
+          <div className="border-[3px] border-black dark:border-white bg-[#f8e71c] dark:bg-[#b8a900] px-2 sm:px-4 py-2 flex items-center justify-center shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all text-black dark:text-white w-full lg:w-auto text-center">
             PROJECTS
           </div>
-          <div className="border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] px-3 sm:px-4 py-2 shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all text-black dark:text-white">
+          <div className="border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] px-2 sm:px-4 py-2 flex items-center justify-center shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all text-black dark:text-white w-full lg:w-auto text-center">
             CERTIFICATES
           </div>
-          <div className="border-[3px] border-black dark:border-white bg-[#ff79c6] dark:bg-[#b83280] px-3 sm:px-4 py-2 shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all text-black dark:text-white">
+          <div className="border-[3px] border-black dark:border-white bg-[#ff79c6] dark:bg-[#b83280] px-2 sm:px-4 py-2 flex items-center justify-center shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all text-black dark:text-white w-full lg:w-auto text-center">
             CONTACT
           </div>
         </nav>
-        <div className="flex gap-2 sm:gap-4 w-full lg:w-auto items-center justify-center lg:justify-end mt-2 lg:mt-0">
+        <div className="flex gap-2 sm:gap-4 w-full lg:w-auto items-stretch justify-center lg:justify-end mt-2 lg:mt-0">
           <ThemeToggle />
           <div className="border-[3px] border-black dark:border-white bg-[#ff3b30] text-white font-black px-4 sm:px-6 py-2 shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all flex justify-center items-center gap-2 text-xs sm:text-sm md:text-base uppercase tracking-wider flex-1 lg:flex-none whitespace-nowrap">
             <span>☠</span> <span className="hidden sm:inline">DON'T CLICK ME</span><span className="sm:hidden">DON'T CLICK</span>
