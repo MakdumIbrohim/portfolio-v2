@@ -40,6 +40,16 @@ const certificates = [
         credentialUrl: "https://dicoding.com/certificates/ERZR242LQPYV"
     },
     {
+        id: 5,
+        title: "Memulai Pemrograman dengan Dart",
+        issuer: "Dicoding Indonesia",
+        date: "07 September 2025",
+        color: "#2d3e50", // Dicoding dark blue
+        icon: "/icon/dicoding/dicoding.jpeg",
+        imageUrl: "/certificates/dicoding/sertifikat_memulai_pemrograman_dart.png",
+        credentialUrl: "https://dicoding.com/certificates/EYX4K95J6PDL"
+    },
+    {
         id: 2,
         title: "Sertifikat Web Developer",
         issuer: "IMPHNEN",
