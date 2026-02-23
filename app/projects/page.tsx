@@ -74,7 +74,7 @@ export default function ProjectsPage() {
                     <div>
                         <h1 className="text-[7vw] sm:text-3xl md:text-5xl lg:text-[3rem] font-press-start uppercase tracking-tighter text-center md:text-left leading-[1.3] flex items-center justify-center md:justify-start gap-4 sm:gap-6 flex-wrap">
                             <FolderGit2 className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-[#f8e71c] dark:text-[#b8a900]" strokeWidth={2.5} />
-                            <span>MY <span className="bg-[#f8e71c] dark:bg-[#b8a900] text-black px-3 sm:px-4 pb-1 sm:pb-2 border-[3px] sm:border-[4px] border-black dark:border-white inline-block shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] rotate-2">PROJECTS</span></span>
+                            <span>MY<span className="bg-[#f8e71c] dark:bg-[#b8a900] text-black px-3 sm:px-4 pb-1 sm:pb-2 ml-1 sm:ml-2 border-[3px] sm:border-[4px] border-black dark:border-white inline-block shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] rotate-2">PROJECTS</span></span>
                         </h1>
                     </div>
 

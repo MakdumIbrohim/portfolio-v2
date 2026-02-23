@@ -91,7 +91,7 @@ export default function Certificates() {
                 <div className="mb-10 sm:mb-14 border-b-[4px] border-dashed border-black dark:border-white pb-6 sm:pb-8">
                     <h1 className="text-[7vw] sm:text-3xl md:text-5xl font-press-start uppercase tracking-tighter text-center lg:text-left leading-[1.3] flex items-center justify-center lg:justify-start gap-4 sm:gap-6 flex-wrap">
                         <Award className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-[#50e3c2] dark:text-[#008f6b]" strokeWidth={2.5} />
-                        <span>PROOF OF <span className="bg-[#50e3c2] dark:bg-[#008f6b] text-black dark:text-white px-3 sm:px-4 pb-1 sm:pb-2 border-[3px] sm:border-[4px] border-black dark:border-white inline-block shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] -rotate-2">SKILL</span></span>
+                        <span>PROOF OF<span className="bg-[#50e3c2] dark:bg-[#008f6b] text-black dark:text-white px-3 sm:px-4 pb-1 sm:pb-2 ml-1 sm:ml-2 border-[3px] sm:border-[4px] border-black dark:border-white inline-block shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] -rotate-2">SKILL</span></span>
                     </h1>
                     <p className="font-press-start text-[8px] sm:text-[10px] md:text-xs leading-loose text-center lg:text-left mt-6 max-w-2xl bg-[#fff9db] dark:bg-[#1f1a00] p-4 border-[3px] border-black dark:border-white shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] uppercase text-black dark:text-gray-300 mx-auto lg:mx-0">
                         &gt; SELECT _DATABASE: CERTIFICATES.SQL<br />

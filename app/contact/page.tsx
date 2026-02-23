@@ -75,7 +75,7 @@ export default function Contact() {
             {/* Main Content Container */}
             <main className="border-[3px] border-black dark:border-white p-4 sm:p-6 md:p-10 bg-white dark:bg-[#121212] max-w-6xl mx-auto shadow-[6px_6px_0_0_#000] md:shadow-[12px_12px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] dark:md:shadow-[12px_12px_0_0_#fff] relative">
                 <h1 className="text-[7vw] sm:text-3xl md:text-5xl lg:text-[3rem] font-press-start uppercase tracking-tighter mb-8 sm:mb-12 text-center lg:text-left leading-[1.3]">
-                    LET'S <span className="bg-[#ff79c6] dark:bg-[#b83280] text-white px-3 sm:px-4 pb-1 sm:pb-2 border-[3px] sm:border-[4px] border-black dark:border-white inline-block shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] rotate-1">CONNECT</span>
+                    LET'S<span className="bg-[#ff79c6] dark:bg-[#b83280] text-white px-3 sm:px-4 pb-1 sm:pb-2 ml-1 sm:ml-2 border-[3px] sm:border-[4px] border-black dark:border-white inline-block shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] rotate-1">CONNECT</span>
                 </h1>
 
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-8 lg:gap-12 relative">
