@@ -153,38 +153,41 @@ export function AudioPlayerCard() {
     return (
         <div className="mt-8 border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] p-3 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] text-black dark:text-white flex flex-col gap-3 relative overflow-hidden group">
 
-            {/* Top Row: Cover, Info, Controls */}
-            <div className="flex items-center gap-3 md:gap-4 w-full">
+            {/* Top Row: Responsive layout, stack on mobile, row on desktop */}
+            <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 w-full justify-between">
 
-                {/* Album Cover Art (Vinyl Style) */}
-                <div className={`w-14 h-14 sm:w-16 sm:h-16 shrink-0 relative border-[3px] border-black dark:border-white rounded-full overflow-hidden ${isPlaying ? 'animate-[spin_4s_linear_infinite]' : ''}`}>
-                    <div className="absolute inset-0 bg-[#0f0f0f] rounded-full">
-                        <div className="absolute inset-[10%] border border-gray-800 rounded-full"></div>
-                        <div className="absolute inset-[25%] border border-gray-800 rounded-full"></div>
-                    </div>
-                    <img
-                        src={currentTrack.coverUrl}
-                        alt={currentTrack.title}
-                        className="absolute inset-[15%] w-[70%] h-[70%] object-cover rounded-full border border-gray-600"
-                    />
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 sm:w-3 sm:h-3 bg-white dark:bg-[#1a1a1a] rounded-full border border-black z-10"></div>
-                </div>
-
-                {/* Track Info */}
-                <div className="flex-1 min-w-0 pr-2">
-                    <div className="flex justify-between items-start">
-                        <div className="flex flex-col truncate">
-                            <span className="font-black text-sm uppercase truncate leading-tight mb-0.5">{currentTrack.title}</span>
-                            <span className="font-bold text-[10px] uppercase opacity-80 font-mono truncate">{currentTrack.artist}</span>
+                {/* Left Side: Cover & Info */}
+                <div className="flex items-center gap-3 w-full sm:w-auto sm:flex-1 min-w-0">
+                    {/* Album Cover Art (Vinyl Style) */}
+                    <div className={`w-14 h-14 sm:w-16 sm:h-16 shrink-0 relative border-[3px] border-black dark:border-white rounded-full overflow-hidden ${isPlaying ? 'animate-[spin_4s_linear_infinite]' : ''}`}>
+                        <div className="absolute inset-0 bg-[#0f0f0f] rounded-full">
+                            <div className="absolute inset-[10%] border border-gray-800 rounded-full"></div>
+                            <div className="absolute inset-[25%] border border-gray-800 rounded-full"></div>
                         </div>
-                        <button onClick={toggleMute} className="opacity-70 hit-target hover:opacity-100 hover:scale-110 transition-all shrink-0 ml-2">
-                            {isMuted ? <VolumeX size={16} strokeWidth={3} /> : <Volume2 size={16} strokeWidth={3} />}
-                        </button>
+                        <img
+                            src={currentTrack.coverUrl}
+                            alt={currentTrack.title}
+                            className="absolute inset-[15%] w-[70%] h-[70%] object-cover rounded-full border border-gray-600"
+                        />
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 sm:w-3 sm:h-3 bg-white dark:bg-[#1a1a1a] rounded-full border border-black z-10"></div>
+                    </div>
+
+                    {/* Track Info */}
+                    <div className="flex-1 min-w-0 pr-2">
+                        <div className="flex justify-between items-start">
+                            <div className="flex flex-col truncate">
+                                <span className="font-black text-sm uppercase truncate leading-tight mb-0.5">{currentTrack.title}</span>
+                                <span className="font-bold text-[10px] uppercase opacity-80 font-mono truncate">{currentTrack.artist}</span>
+                            </div>
+                            <button onClick={toggleMute} className="opacity-70 hit-target hover:opacity-100 hover:scale-110 transition-all shrink-0 ml-2">
+                                {isMuted ? <VolumeX size={16} strokeWidth={3} /> : <Volume2 size={16} strokeWidth={3} />}
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                {/* Controls (Right Justified on Desktop, inline on Mobile) */}
-                <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+                {/* Right Side: Controls */}
+                <div className="flex justify-center sm:justify-start items-center gap-1 sm:gap-2 shrink-0 w-full sm:w-auto">
                     <button
                         onClick={toggleShuffle}
                         className={`p-1.5 border-[2px] border-black dark:border-white shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:translate-y-[1px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] transition-all flex ${isShuffle ? 'bg-[#ff79c6] text-white dark:bg-[#b83280]' : 'bg-white dark:bg-black text-black dark:text-white hover:bg-[#f8e71c] dark:hover:bg-[#b8a900]'}`}
