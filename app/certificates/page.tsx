@@ -174,7 +174,7 @@ export default function Certificates() {
                                             <img
                                                 src={cert.imageUrl}
                                                 alt={`Certificate for ${cert.title}`}
-                                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 hover:scale-105"
+                                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-active:grayscale-0 focus:grayscale-0 transition-all duration-500 group-hover:scale-105 group-active:scale-105 focus:scale-105"
                                             />
                                         </div>
                                     ) : null}
@@ -182,7 +182,7 @@ export default function Certificates() {
                                     <div className="p-5 sm:p-6 flex flex-col flex-1 relative">
                                         {/* Large Background Icon (only if no image) */}
                                         {!cert.imageUrl && (
-                                            <div className="absolute right-4 bottom-4 text-6xl opacity-10 group-hover:scale-125 transition-transform duration-500 pointer-events-none grayscale group-hover:grayscale-0">
+                                            <div className="absolute right-4 bottom-4 text-6xl opacity-10 group-hover:scale-125 group-active:scale-125 focus:scale-125 transition-transform duration-500 pointer-events-none grayscale group-hover:grayscale-0 group-active:grayscale-0 focus:grayscale-0">
                                                 {cert.icon.startsWith('/') ? (
                                                     <img src={cert.icon} alt={cert.issuer} className="w-24 h-24 object-contain opacity-50" />
                                                 ) : (
@@ -197,7 +197,7 @@ export default function Certificates() {
                                             </div>
                                         </div>
 
-                                        <h2 className="text-xl sm:text-2xl font-black uppercase leading-tight mb-2 relative z-10 group-hover:text-[#4a90e2] transition-colors">
+                                        <h2 className="text-xl sm:text-2xl font-black uppercase leading-tight mb-2 relative z-10 group-hover:text-[#4a90e2] group-active:text-[#4a90e2] focus:text-[#4a90e2] transition-colors">
                                             {cert.title}
                                         </h2>
 
