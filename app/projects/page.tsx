@@ -10,6 +10,15 @@ import { MobileMenu } from '@/components/mobile-menu';
 // Sample projects data
 const projects = [
     {
+        id: 0,
+        title: "Web Desa Murtajih",
+        description: "Website profil dan informasi publik terpadu untuk Desa Murtajih. Menyajikan data pemerintahan, layanan administrasi mandiri, dan galeri desa.",
+        tech: ["React", "Tailwind CSS", "Vercel"],
+        color: "#ff79c6", // Magenta
+        link: "https://desamurtajih.vercel.app/",
+        github: "https://github.com/Radisty32/web_desa_murtajih.git"
+    },
+    {
         id: 1,
         title: "E-Learning Platform",
         description: "A comprehensive learning management system built with Next.js, featuring real-time video streaming, interactive quizzes, and progress tracking.",
