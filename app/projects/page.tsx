@@ -27,6 +27,15 @@ const projects = [
         color: "#f8e71c", // Yellow
         github: "https://github.com/MakdumIbrohim/easyPDF-app.git",
         image: "/projects/mobile-apps/easy-pdf-app/easyPDF_app_screenshot.jpg"
+    },
+    {
+        id: 2,
+        title: "Chatbot App",
+        description: "Aplikasi obrolan pintar berbasis AI untuk platform mobile. Dikembangkan untuk memberikan respon otomatis dan interaksi teks secara efisien.",
+        tech: ["React Native", "Expo", "Mobile"],
+        color: "#50e3c2", // Cyan
+        github: "https://github.com/MakdumIbrohim/chatbot_app.git",
+        image: "/projects/mobile-apps/chatbot-app/chatbot_app_screenshot.jpg"
     }
 ];
 
