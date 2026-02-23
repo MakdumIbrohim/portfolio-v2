@@ -53,7 +53,7 @@ export default function ProjectsPage() {
             {/* Header Navigation */}
             <header className="border-[3px] border-black dark:border-white p-3 sm:p-4 md:p-6 mb-4 md:mb-8 bg-white dark:bg-black flex items-center justify-between gap-4 max-w-6xl mx-auto shadow-[4px_4px_0_0_#000] lg:shadow-[8px_8px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] dark:lg:shadow-[8px_8px_0_0_#fff]">
                 {/* Desktop Nav */}
-                <nav className="hidden lg:flex justify-start gap-4 font-black text-sm lg:text-base tracking-wider uppercase">
+                <nav className="hidden lg:flex justify-start gap-4 font-press-start text-[8px] sm:text-[10px] md:text-xs tracking-wider uppercase">
                     <Link href="/" className="border-[3px] border-black dark:border-white bg-[#4a90e2] text-white px-6 py-2 flex items-center justify-center gap-2 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all">
                         <span className="text-lg leading-none mt-[-2px]">←</span> BACK TO HOME
                     </Link>
@@ -72,13 +72,13 @@ export default function ProjectsPage() {
                 {/* Page Title */}
                 <div className="mb-10 sm:mb-14 border-b-[4px] border-dashed border-black dark:border-white pb-6 sm:pb-8 flex flex-col md:flex-row gap-6 justify-between items-start md:items-end">
                     <div>
-                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter text-center md:text-left leading-none flex items-center justify-center md:justify-start gap-4 sm:gap-6 flex-wrap">
-                            <FolderGit2 className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 text-[#f8e71c] dark:text-[#b8a900]" strokeWidth={2.5} />
+                        <h1 className="text-[7vw] sm:text-3xl md:text-5xl lg:text-[3rem] font-press-start uppercase tracking-tighter text-center md:text-left leading-[1.3] flex items-center justify-center md:justify-start gap-4 sm:gap-6 flex-wrap">
+                            <FolderGit2 className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-[#f8e71c] dark:text-[#b8a900]" strokeWidth={2.5} />
                             <span>MY <span className="bg-[#f8e71c] dark:bg-[#b8a900] text-black px-3 sm:px-4 pb-1 sm:pb-2 border-[3px] sm:border-[4px] border-black dark:border-white inline-block shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] rotate-2">PROJECTS</span></span>
                         </h1>
                     </div>
 
-                    <div className="font-mono text-xs sm:text-sm font-bold bg-[#fff9db] dark:bg-[#1f1a00] p-3 border-[3px] border-black dark:border-white shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] uppercase text-black dark:text-gray-300 w-full md:w-auto">
+                    <div className="font-press-start text-[8px] sm:text-[10px] bg-[#fff9db] dark:bg-[#1f1a00] p-4 border-[3px] border-black dark:border-white shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] uppercase text-black dark:text-gray-300 w-full md:w-auto leading-loose">
                         STATUS: BUILDING 🏗️<br />
                         COMMITS: TOO MANY
                     </div>
@@ -106,7 +106,7 @@ export default function ProjectsPage() {
                             </div>
 
                             <div className="p-5 sm:p-6 md:p-8 flex flex-col flex-1">
-                                <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight mb-4 group-hover:underline decoration-4 underline-offset-4">
+                                <h2 className="text-sm sm:text-base font-press-start uppercase tracking-tight mb-4 group-hover:underline decoration-4 underline-offset-4 leading-[1.4]">
                                     {project.title}
                                 </h2>
 
@@ -116,7 +116,7 @@ export default function ProjectsPage() {
 
                                 {/* Tech Stack Tags */}
                                 <div className="mb-8">
-                                    <div className="font-bold text-[10px] sm:text-xs uppercase tracking-widest mb-2 opacity-60">Tech Stack</div>
+                                    <div className="font-press-start text-[8px] uppercase tracking-widest mb-3 opacity-60">Tech Stack</div>
                                     <div className="flex flex-wrap gap-2">
                                         {project.tech.map((tech, i) => (
                                             <span key={i} className="font-mono text-[10px] sm:text-xs font-bold border-[2px] border-black dark:border-white bg-white dark:bg-black px-2 py-1 shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff]">
@@ -128,11 +128,11 @@ export default function ProjectsPage() {
 
                                 {/* Action Buttons */}
                                 <div className="flex flex-wrap gap-3 sm:gap-4 mt-auto pt-4 border-t-[3px] border-dashed border-black dark:border-white opacity-50 group-hover:opacity-100 transition-opacity">
-                                    <a href={project.github} className="border-[3px] border-black dark:border-white bg-black dark:bg-white text-white dark:text-black font-bold text-xs sm:text-sm px-4 py-2 flex justify-center items-center gap-2 flex-1 hover:translate-y-[2px] shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:shadow-none transition-all uppercase">
-                                        <Github size={16} strokeWidth={2.5} /> Repo
+                                    <a href={project.github} className="border-[3px] border-black dark:border-white bg-black dark:bg-white text-white dark:text-black font-press-start text-[8px] sm:text-[10px] px-4 py-3 flex justify-center items-center gap-2 flex-1 hover:translate-y-[2px] shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:shadow-none transition-all uppercase leading-[1.3]">
+                                        <Github size={14} strokeWidth={2.5} /> Repo
                                     </a>
-                                    <a href={project.link} className="border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] text-black dark:text-white font-bold text-xs sm:text-sm px-4 py-2 flex justify-center items-center gap-2 flex-1 hover:translate-y-[2px] shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:shadow-none transition-all uppercase">
-                                        <ExternalLink size={16} strokeWidth={2.5} /> Live
+                                    <a href={project.link} className="border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] text-black dark:text-white font-press-start text-[8px] sm:text-[10px] px-4 py-3 flex justify-center items-center gap-2 flex-1 hover:translate-y-[2px] shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:shadow-none transition-all uppercase leading-[1.3]">
+                                        <ExternalLink size={14} strokeWidth={2.5} /> Live
                                     </a>
                                 </div>
                             </div>

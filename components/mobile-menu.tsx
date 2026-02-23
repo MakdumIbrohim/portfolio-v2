@@ -42,7 +42,7 @@ export function MobileMenu() {
 
                     {/* Menu Content */}
                     <div className="absolute top-full right-0 mt-3 w-56 border-[3px] border-black dark:border-white bg-white dark:bg-[#121212] flex flex-col shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] z-50 animate-[slide-down_0.2s_ease-out]">
-                        <div className="bg-[#4a90e2] text-white p-3 border-b-[3px] border-black dark:border-white font-black text-xs tracking-widest uppercase flex items-center justify-between">
+                        <div className="bg-[#4a90e2] text-white p-3 border-b-[3px] border-black dark:border-white font-press-start text-[8px] tracking-widest uppercase flex items-center justify-between">
                             <span>NAVIGATION</span>
                         </div>
 
@@ -54,7 +54,7 @@ export function MobileMenu() {
                                         key={link.href}
                                         href={link.href}
                                         onClick={() => setIsOpen(false)}
-                                        className={`p-4 font-black text-sm tracking-wider uppercase border-b-[3px] border-black dark:border-white last:border-b-0 hover:bg-[#ff79c6] dark:hover:bg-[#b83280] hover:text-white transition-colors flex items-center justify-between ${isActive
+                                        className={`p-4 font-press-start text-[8px] tracking-wider uppercase border-b-[3px] border-black dark:border-white last:border-b-0 hover:bg-[#ff79c6] dark:hover:bg-[#b83280] hover:text-white transition-colors flex items-center justify-between ${isActive
                                             ? "bg-[#50e3c2] dark:bg-[#008f6b] text-black dark:text-white -mr-1 shadow-[-4px_0_0_0_#000] dark:shadow-[-4px_0_0_0_#fff]"
                                             : "text-black dark:text-white"
                                             }`}

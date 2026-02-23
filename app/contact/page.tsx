@@ -46,7 +46,7 @@ export default function Contact() {
             {/* Custom Toast Notification */}
             {toast.show && (
                 <div className="fixed bottom-4 right-4 z-50 animate-[slide-up_0.3s_ease-out]">
-                    <div className={`border-[3px] border-black p-4 font-black tracking-widest uppercase shadow-[4px_4px_0_0_#000] flex items-center gap-3 ${toast.type === 'success' ? 'bg-[#50e3c2] text-black' : 'bg-[#ff3b30] text-white'}`}>
+                    <div className={`border-[3px] border-black p-4 font-press-start text-[8px] tracking-widest uppercase shadow-[4px_4px_0_0_#000] flex items-center gap-3 ${toast.type === 'success' ? 'bg-[#50e3c2] text-black' : 'bg-[#ff3b30] text-white'}`}>
                         {toast.type === 'success' ? <Send size={20} /> : <div className="w-5 h-5 flex items-center justify-center border-2 border-current rounded-full">!</div>}
                         {toast.message}
                     </div>
@@ -56,7 +56,7 @@ export default function Contact() {
             {/* Header Navigation */}
             <header className="border-[3px] border-black dark:border-white p-3 sm:p-4 md:p-6 mb-4 md:mb-8 bg-white dark:bg-black flex items-center justify-between gap-4 max-w-6xl mx-auto shadow-[4px_4px_0_0_#000] lg:shadow-[8px_8px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] dark:lg:shadow-[8px_8px_0_0_#fff]">
                 {/* Desktop Nav */}
-                <nav className="hidden lg:flex justify-start gap-4 font-black text-sm lg:text-base tracking-wider uppercase">
+                <nav className="hidden lg:flex justify-start gap-4 font-press-start text-[8px] sm:text-[10px] md:text-xs tracking-wider uppercase">
                     <Link href="/" className="border-[3px] border-black dark:border-white bg-[#4a90e2] text-white px-6 py-2 flex items-center justify-center gap-2 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all">
                         <span className="text-lg leading-none mt-[-2px]">←</span> BACK TO HOME
                     </Link>
@@ -74,7 +74,7 @@ export default function Contact() {
 
             {/* Main Content Container */}
             <main className="border-[3px] border-black dark:border-white p-4 sm:p-6 md:p-10 bg-white dark:bg-[#121212] max-w-6xl mx-auto shadow-[6px_6px_0_0_#000] md:shadow-[12px_12px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] dark:md:shadow-[12px_12px_0_0_#fff] relative">
-                <h1 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8 sm:mb-12 text-center lg:text-left leading-none">
+                <h1 className="text-[7vw] sm:text-3xl md:text-5xl lg:text-[3rem] font-press-start uppercase tracking-tighter mb-8 sm:mb-12 text-center lg:text-left leading-[1.3]">
                     LET'S <span className="bg-[#ff79c6] dark:bg-[#b83280] text-white px-3 sm:px-4 pb-1 sm:pb-2 border-[3px] sm:border-[4px] border-black dark:border-white inline-block shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] rotate-1">CONNECT</span>
                 </h1>
 
@@ -85,7 +85,7 @@ export default function Contact() {
                         <div className="border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] p-4 sm:p-6 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] flex items-center gap-4 transition-transform hover:-translate-y-1">
                             <Mail className="w-8 h-8 sm:w-10 sm:h-10 text-black dark:text-white" strokeWidth={2.5} />
                             <div className="overflow-hidden">
-                                <p className="font-bold text-[10px] sm:text-xs uppercase tracking-widest text-black dark:text-white opacity-80 mb-1">Electronic Mail</p>
+                                <p className="font-press-start text-[8px] uppercase tracking-widest text-black dark:text-white opacity-80 mb-2">Electronic Mail</p>
                                 <a href="mailto:mkdmvx9@gmail.com" className="font-mono text-sm sm:text-lg hover:underline font-bold text-black dark:text-white truncate block">mkdmvx9@gmail.com</a>
                             </div>
                         </div>
@@ -93,7 +93,7 @@ export default function Contact() {
                         <div className="border-[3px] border-black dark:border-white bg-[#f8e71c] dark:bg-[#b8a900] p-4 sm:p-6 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] flex items-center gap-4 transition-transform hover:-translate-y-1">
                             <Phone className="w-8 h-8 sm:w-10 sm:h-10 text-black dark:text-white" strokeWidth={2.5} />
                             <div>
-                                <p className="font-bold text-[10px] sm:text-xs uppercase tracking-widest text-black dark:text-white opacity-80 mb-1">Direct Line</p>
+                                <p className="font-press-start text-[8px] uppercase tracking-widest text-black dark:text-white opacity-80 mb-2">Direct Line</p>
                                 <p className="font-mono text-sm sm:text-lg font-bold text-black dark:text-white">+62 851-7744-8544</p>
                             </div>
                         </div>
@@ -101,7 +101,7 @@ export default function Contact() {
                         <div className="border-[3px] border-black dark:border-white bg-[#4a90e2] text-white p-4 sm:p-6 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] flex items-center gap-4 transition-transform hover:-translate-y-1">
                             <MapPin className="w-8 h-8 sm:w-10 sm:h-10 text-white" strokeWidth={2.5} />
                             <div>
-                                <p className="font-bold text-[10px] sm:text-xs uppercase tracking-widest opacity-80 mb-1">Coordinates</p>
+                                <p className="font-press-start text-[8px] uppercase tracking-widest opacity-80 mb-2">Coordinates</p>
                                 <p className="font-mono text-sm sm:text-lg font-bold">East Java, Indonesia</p>
                             </div>
                         </div>
@@ -123,7 +123,7 @@ export default function Contact() {
                     <div className="border-[3px] border-black dark:border-white bg-[#fdfdfd] dark:bg-[#1e1e1e] shadow-[4px_4px_0_0_#000] border-t-8 border-t-[#ff3b30] flex flex-col mt-4 lg:mt-0">
                         <div className="p-4 sm:p-6 md:p-8 flex flex-col flex-1">
                             <div className="flex items-center justify-between mb-6 pb-4 border-b-[3px] border-black dark:border-white border-dashed">
-                                <h2 className="font-black text-xl sm:text-2xl md:text-3xl uppercase">SEND PAYLOAD</h2>
+                                <h2 className="font-press-start text-sm sm:text-base md:text-lg uppercase leading-[1.3]">SEND PAYLOAD</h2>
                                 <div className="flex gap-1">
                                     <div className="w-3 h-3 bg-black dark:bg-white rounded-full animate-bounce"></div>
                                     <div className="w-3 h-3 bg-black dark:bg-white rounded-full animate-bounce" style={{ animationDelay: "0.1s" }}></div>
@@ -134,21 +134,21 @@ export default function Contact() {
                             <form className="flex flex-col gap-5 flex-1" onSubmit={handleSubmit}>
                                 <div className="flex flex-col sm:flex-row gap-5">
                                     <div className="flex-1 flex flex-col">
-                                        <label htmlFor="name" className="font-bold text-xs uppercase mb-1 tracking-widest px-1">Nama/Alias</label>
+                                        <label htmlFor="name" className="font-press-start text-[8px] uppercase mb-2 tracking-widest px-1">Nama/Alias</label>
                                         <input type="text" id="name" name="name" required disabled={isSubmitting} placeholder="GUEST USER" className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#f8e71c] focus:bg-white dark:focus:bg-black transition-colors disabled:opacity-50" />
                                     </div>
                                     <div className="flex-1 flex flex-col">
-                                        <label htmlFor="email" className="font-bold text-xs uppercase mb-1 tracking-widest px-1">Email Balasan</label>
+                                        <label htmlFor="email" className="font-press-start text-[8px] uppercase mb-2 tracking-widest px-1">Email Balasan</label>
                                         <input type="email" id="email" name="email" required disabled={isSubmitting} placeholder="EMAIL ADDRESS" className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#50e3c2] focus:bg-white dark:focus:bg-black transition-colors disabled:opacity-50" />
                                     </div>
                                 </div>
 
                                 <div className="flex flex-col flex-1">
-                                    <label htmlFor="message" className="font-bold text-xs uppercase mb-1 tracking-widest px-1">Isi Pesan</label>
+                                    <label htmlFor="message" className="font-press-start text-[8px] uppercase mb-2 tracking-widest px-1">Isi Pesan</label>
                                     <textarea id="message" name="message" required disabled={isSubmitting} placeholder="ENTER MESSAGE PROTOCOL HERE..." className="border-[3px] border-black dark:border-white bg-[#f4f4f0] dark:bg-[#121212] p-3 font-mono text-sm h-40 sm:h-48 resize-none focus:outline-none focus:ring-2 focus:ring-[#4a90e2] focus:bg-white dark:focus:bg-black transition-colors flex-1 disabled:opacity-50" />
                                 </div>
 
-                                <button type="submit" disabled={isSubmitting} className="border-[3px] border-black dark:border-white bg-black dark:bg-white text-white dark:text-black font-black text-lg p-4 mt-2 shadow-[4px_4px_0_0_#ff3b30] hover:translate-y-[2px] transition-transform active:shadow-[1px_1px_0_0_#ff3b30] active:translate-y-[4px] flex justify-center items-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed">
+                                <button type="submit" disabled={isSubmitting} className="border-[3px] border-black dark:border-white bg-black dark:bg-white text-white dark:text-black font-press-start text-[10px] sm:text-xs tracking-widest p-4 mt-2 shadow-[4px_4px_0_0_#ff3b30] hover:translate-y-[2px] transition-transform active:shadow-[1px_1px_0_0_#ff3b30] active:translate-y-[4px] flex justify-center items-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed">
                                     {isSubmitting ? (
                                         <div className="w-5 h-5 border-2 border-white dark:border-black border-t-transparent rounded-full animate-spin"></div>
                                     ) : (

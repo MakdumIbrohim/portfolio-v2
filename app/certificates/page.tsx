@@ -69,7 +69,7 @@ export default function Certificates() {
             {/* Header Navigation */}
             <header className="border-[3px] border-black dark:border-white p-3 sm:p-4 md:p-6 mb-4 md:mb-8 bg-white dark:bg-black flex items-center justify-between gap-4 max-w-6xl mx-auto shadow-[4px_4px_0_0_#000] lg:shadow-[8px_8px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] dark:lg:shadow-[8px_8px_0_0_#fff]">
                 {/* Desktop Nav */}
-                <nav className="hidden lg:flex justify-start gap-4 font-black text-sm lg:text-base tracking-wider uppercase">
+                <nav className="hidden lg:flex justify-start gap-4 font-press-start text-[8px] sm:text-[10px] md:text-xs tracking-wider uppercase">
                     <Link href="/" className="border-[3px] border-black dark:border-white bg-[#4a90e2] text-white px-6 py-2 flex items-center justify-center gap-2 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all">
                         <span className="text-lg leading-none mt-[-2px]">←</span> BACK TO HOME
                     </Link>
@@ -89,11 +89,11 @@ export default function Certificates() {
 
                 {/* Page Title */}
                 <div className="mb-10 sm:mb-14 border-b-[4px] border-dashed border-black dark:border-white pb-6 sm:pb-8">
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter text-center lg:text-left leading-none flex items-center justify-center lg:justify-start gap-4 sm:gap-6 flex-wrap">
-                        <Award className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 text-[#50e3c2] dark:text-[#008f6b]" strokeWidth={2.5} />
+                    <h1 className="text-[7vw] sm:text-3xl md:text-5xl font-press-start uppercase tracking-tighter text-center lg:text-left leading-[1.3] flex items-center justify-center lg:justify-start gap-4 sm:gap-6 flex-wrap">
+                        <Award className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-[#50e3c2] dark:text-[#008f6b]" strokeWidth={2.5} />
                         <span>PROOF OF <span className="bg-[#50e3c2] dark:bg-[#008f6b] text-black dark:text-white px-3 sm:px-4 pb-1 sm:pb-2 border-[3px] sm:border-[4px] border-black dark:border-white inline-block shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] -rotate-2">SKILL</span></span>
                     </h1>
-                    <p className="font-mono text-sm sm:text-base font-bold text-center lg:text-left mt-6 max-w-2xl bg-[#fff9db] dark:bg-[#1f1a00] p-4 border-[3px] border-black dark:border-white shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] uppercase text-black dark:text-gray-300 mx-auto lg:mx-0">
+                    <p className="font-press-start text-[8px] sm:text-[10px] md:text-xs leading-loose text-center lg:text-left mt-6 max-w-2xl bg-[#fff9db] dark:bg-[#1f1a00] p-4 border-[3px] border-black dark:border-white shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] uppercase text-black dark:text-gray-300 mx-auto lg:mx-0">
                         &gt; SELECT _DATABASE: CERTIFICATES.SQL<br />
                         &gt; QUERY RETURNED {certificates.length} RECORDS.
                     </p>
@@ -132,10 +132,10 @@ export default function Certificates() {
                                         issuerGroup.icon
                                     )}
                                 </div>
-                                <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight mb-4 group-hover:text-[#4a90e2] transition-colors">
+                                <h2 className="text-sm sm:text-base font-press-start uppercase tracking-tight mb-4 group-hover:text-[#4a90e2] transition-colors leading-[1.4]">
                                     {issuerGroup.name}
                                 </h2>
-                                <div className="bg-black dark:bg-white text-white dark:text-black font-black text-xs px-3 py-1 uppercase tracking-widest border-[2px] border-black dark:border-white mt-auto inline-block">
+                                <div className="bg-black dark:bg-white text-white dark:text-black font-press-start text-[8px] px-3 py-1.5 uppercase tracking-widest border-[2px] border-black dark:border-white mt-auto inline-block">
                                     {issuerGroup.certs.length} CREDENTIAL{issuerGroup.certs.length !== 1 ? 'S' : ''}
                                 </div>
                             </button>
