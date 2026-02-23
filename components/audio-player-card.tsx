@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Play, Pause, SkipForward, SkipBack, Volume2, VolumeX, Disc3 } from 'lucide-react';
+import { Play, Pause, SkipForward, SkipBack, Volume2, VolumeX, Disc3, Repeat, Repeat1, Shuffle } from 'lucide-react';
 import { audioTracks } from '@/lib/audio-tracks';
 
 export function AudioPlayerCard() {
@@ -11,6 +11,8 @@ export function AudioPlayerCard() {
     const [progress, setProgress] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
+    const [isShuffle, setIsShuffle] = useState(false);
+    const [repeatMode, setRepeatMode] = useState<'none' | 'all' | 'one'>('none');
 
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -51,7 +53,14 @@ export function AudioPlayerCard() {
         };
 
         const handleEnded = () => {
-            playNext();
+            if (repeatMode === 'one') {
+                if (audioRef.current) {
+                    audioRef.current.currentTime = 0;
+                    audioRef.current.play().catch(console.error);
+                }
+            } else {
+                playNext();
+            }
         };
 
         audioRef.current.addEventListener('timeupdate', updateProgress);
@@ -95,16 +104,50 @@ export function AudioPlayerCard() {
     };
 
     const playNext = () => {
-        setCurrentTrackIndex((prev) => (prev + 1) % audioTracks.length);
-        // Setting progress to 0 manually for immediate visual feedback
+        if (isShuffle) {
+            let nextIndex;
+            do {
+                nextIndex = Math.floor(Math.random() * audioTracks.length);
+            } while (nextIndex === currentTrackIndex && audioTracks.length > 1);
+            setCurrentTrackIndex(nextIndex);
+        } else {
+            // Note: Stop playing if we reach the end and repeat is 'none'
+            if (repeatMode === 'none' && currentTrackIndex === audioTracks.length - 1) {
+                setIsPlaying(false);
+                setProgress(0);
+                setCurrentTime(0);
+                return;
+            }
+            setCurrentTrackIndex((prev) => (prev + 1) % audioTracks.length);
+        }
         setProgress(0);
         setCurrentTime(0);
     };
 
     const playPrev = () => {
-        setCurrentTrackIndex((prev) => (prev - 1 + audioTracks.length) % audioTracks.length);
+        if (isShuffle) {
+            let prevIndex;
+            do {
+                prevIndex = Math.floor(Math.random() * audioTracks.length);
+            } while (prevIndex === currentTrackIndex && audioTracks.length > 1);
+            setCurrentTrackIndex(prevIndex);
+        } else {
+            setCurrentTrackIndex((prev) => (prev - 1 + audioTracks.length) % audioTracks.length);
+        }
         setProgress(0);
         setCurrentTime(0);
+    };
+
+    const toggleRepeat = () => {
+        setRepeatMode(prev => {
+            if (prev === 'none') return 'all';
+            if (prev === 'all') return 'one';
+            return 'none';
+        });
+    };
+
+    const toggleShuffle = () => {
+        setIsShuffle(!isShuffle);
     };
 
     return (
@@ -159,6 +202,12 @@ export function AudioPlayerCard() {
 
             {/* Controls */}
             <div className="flex items-center gap-1 sm:gap-2">
+                <button
+                    onClick={toggleShuffle}
+                    className={`p-1.5 border-[2px] border-black dark:border-white shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:translate-y-[1px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] transition-all hidden sm:flex ${isShuffle ? 'bg-[#ff79c6] text-white dark:bg-[#b83280]' : 'bg-white dark:bg-black text-black dark:text-white hover:bg-[#f8e71c] dark:hover:bg-[#b8a900]'}`}
+                >
+                    <Shuffle size={14} strokeWidth={3} />
+                </button>
                 <button onClick={playPrev} className="p-1.5 border-[2px] border-black dark:border-white bg-white dark:bg-black text-black dark:text-white hover:bg-[#f8e71c] dark:hover:bg-[#b8a900] dark:hover:text-black shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:translate-y-[1px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] transition-all">
                     <SkipBack size={14} fill="currentColor" />
                 </button>
@@ -170,6 +219,12 @@ export function AudioPlayerCard() {
                 </button>
                 <button onClick={playNext} className="p-1.5 border-[2px] border-black dark:border-white bg-white dark:bg-black text-black dark:text-white hover:bg-[#f8e71c] dark:hover:bg-[#b8a900] dark:hover:text-black shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:translate-y-[1px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] transition-all">
                     <SkipForward size={14} fill="currentColor" />
+                </button>
+                <button
+                    onClick={toggleRepeat}
+                    className={`p-1.5 border-[2px] border-black dark:border-white shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:translate-y-[1px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] transition-all hidden sm:flex ${repeatMode !== 'none' ? 'bg-[#ff79c6] text-white dark:bg-[#b83280]' : 'bg-white dark:bg-black text-black dark:text-white hover:bg-[#f8e71c] dark:hover:bg-[#b8a900]'}`}
+                >
+                    {repeatMode === 'one' ? <Repeat1 size={14} strokeWidth={3} /> : <Repeat size={14} strokeWidth={3} />}
                 </button>
             </div>
 
