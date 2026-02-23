@@ -144,12 +144,12 @@ export default function Certificates() {
                 ) : (
                     <div className="flex flex-col gap-8 animate-[slide-up_0.3s_ease-out]">
                         <div className="flex justify-between items-center sm:items-start flex-col sm:flex-row gap-4 border-b-[3px] border-black dark:border-white border-dashed pb-6">
-                            <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight border-[3px] border-black dark:border-white p-3 inline-block bg-[#f8e71c] dark:bg-[#b8a900] text-black shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff]">
-                                🏢 {selectedIssuer}
+                            <h2 className="text-sm sm:text-base md:text-lg font-press-start uppercase tracking-tight border-[3px] border-black dark:border-white p-3 inline-block bg-[#f8e71c] dark:bg-[#b8a900] text-black shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] leading-[1.4]">
+                                {selectedIssuer}
                             </h2>
                             <button
                                 onClick={() => setSelectedIssuer(null)}
-                                className="border-[3px] border-black dark:border-white bg-[#ff79c6] dark:bg-[#b83280] text-white px-4 py-3 font-black text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_#000] dark:hover:shadow-[2px_2px_0_0_#fff] transition-all w-full sm:w-auto"
+                                className="border-[3px] border-black dark:border-white bg-[#ff79c6] dark:bg-[#b83280] text-white px-4 py-3 font-press-start text-[8px] sm:text-[10px] md:text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_#000] dark:hover:shadow-[2px_2px_0_0_#fff] transition-all w-full sm:w-auto leading-[1.3]"
                             >
                                 <span className="text-lg leading-none mt-[-2px]">←</span> BACK TO ISSUERS
                             </button>
