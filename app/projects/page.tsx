@@ -16,7 +16,17 @@ const projects = [
         tech: ["React", "Tailwind CSS", "Vercel"],
         color: "#ff79c6", // Magenta
         link: "https://desamurtajih.vercel.app/",
-        github: "https://github.com/Radisty32/web_desa_murtajih.git"
+        github: "https://github.com/Radisty32/web_desa_murtajih.git",
+        image: "/projects/web-apps/web-desa-murtajih/image.png"
+    },
+    {
+        id: 1,
+        title: "EasyPDF App",
+        description: "Aplikasi mobile untuk mengonversi, mengedit, dan mengelola file PDF dengan mudah langsung dari perangkat smartphone.",
+        tech: ["Flutter", "Dart", "Mobile"],
+        color: "#f8e71c", // Yellow
+        github: "https://github.com/MakdumIbrohim/easyPDF-app.git",
+        image: "/projects/mobile-apps/easy-pdf-app/easyPDF_app_screenshot.jpg"
     }
 ];
 
@@ -79,6 +89,11 @@ export default function ProjectsPage() {
                             </div>
 
                             <div className="p-5 sm:p-6 md:p-8 flex flex-col flex-1">
+                                {project.image && (
+                                    <div className="mb-4 sm:mb-6 border-[3px] border-black dark:border-white bg-gray-200 dark:bg-zinc-800 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] overflow-hidden aspect-video relative group-hover:-translate-y-1 transition-transform">
+                                        <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                                    </div>
+                                )}
                                 <h2 className="text-sm sm:text-base font-press-start uppercase tracking-tight mb-4 group-hover:underline decoration-4 underline-offset-4 leading-[1.4]">
                                     {project.title}
                                 </h2>
@@ -100,13 +115,15 @@ export default function ProjectsPage() {
                                 </div>
 
                                 {/* Action Buttons */}
-                                <div className="flex flex-wrap gap-3 sm:gap-4 mt-auto pt-4 border-t-[3px] border-dashed border-black dark:border-white opacity-50 group-hover:opacity-100 transition-opacity">
-                                    <a href={project.github} className="border-[3px] border-black dark:border-white bg-black dark:bg-white text-white dark:text-black font-press-start text-[8px] sm:text-[10px] px-4 py-3 flex justify-center items-center gap-2 flex-1 hover:translate-y-[2px] shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:shadow-none transition-all uppercase leading-[1.3]">
+                                <div className="flex flex-wrap flex-col sm:flex-row gap-3 sm:gap-4 mt-auto pt-4 border-t-[3px] border-dashed border-black dark:border-white opacity-50 group-hover:opacity-100 transition-opacity">
+                                    <a href={project.github} className="border-[3px] border-black dark:border-white bg-black dark:bg-white text-white dark:text-black font-press-start text-[8px] sm:text-[10px] px-4 py-3 flex justify-center items-center gap-2 flex-1 hover:translate-y-[2px] shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:shadow-none transition-all uppercase leading-[1.3] text-center w-full">
                                         <Github size={14} strokeWidth={2.5} /> Repo
                                     </a>
-                                    <a href={project.link} className="border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] text-black dark:text-white font-press-start text-[8px] sm:text-[10px] px-4 py-3 flex justify-center items-center gap-2 flex-1 hover:translate-y-[2px] shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:shadow-none transition-all uppercase leading-[1.3]">
-                                        <ExternalLink size={14} strokeWidth={2.5} /> Live
-                                    </a>
+                                    {project.link && (
+                                        <a href={project.link} className="border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] text-black dark:text-white font-press-start text-[8px] sm:text-[10px] px-4 py-3 flex justify-center items-center gap-2 flex-1 hover:translate-y-[2px] shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:shadow-none transition-all uppercase leading-[1.3] text-center w-full">
+                                            <ExternalLink size={14} strokeWidth={2.5} /> Live
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </div>
