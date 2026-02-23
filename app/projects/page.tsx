@@ -36,6 +36,16 @@ const projects = [
         color: "#50e3c2", // Cyan
         github: "https://github.com/MakdumIbrohim/chatbot_app.git",
         image: "/projects/mobile-apps/chatbot-app/chatbot_app_screenshot.jpg"
+    },
+    {
+        id: 3,
+        title: "Day Counter App",
+        description: "Aplikasi web fungsional untuk menghitung jumlah hari yang telah berlalu atau menuju ke tanggal tertentu. Antarmuka minimalis dan responsif.",
+        tech: ["React", "Tailwind CSS"],
+        color: "#4a90e2", // Blue 
+        link: "https://day-counter-app-vert.vercel.app/",
+        github: "https://github.com/MakdumIbrohim/DayCounterApp.git",
+        image: "/projects/web-apps/day-counter-app/image.png"
     }
 ];
 
