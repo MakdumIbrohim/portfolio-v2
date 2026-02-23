@@ -17,43 +17,7 @@ const projects = [
         color: "#ff79c6", // Magenta
         link: "https://desamurtajih.vercel.app/",
         github: "https://github.com/Radisty32/web_desa_murtajih.git"
-    },
-    {
-        id: 1,
-        title: "E-Learning Platform",
-        description: "A comprehensive learning management system built with Next.js, featuring real-time video streaming, interactive quizzes, and progress tracking.",
-        tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-        color: "#4a90e2", // Blue
-        link: "#",
-        github: "#"
-    },
-    {
-        id: 2,
-        title: "DevOps Dashboard",
-        description: "Internal tool for monitoring server health, deployment status, and handling CI/CD pipelines directly from a web interface.",
-        tech: ["React", "Go", "Docker", "Prometheus"],
-        color: "#ff3b30", // Red
-        link: "#",
-        github: "#"
-    },
-    {
-        id: 3,
-        title: "EcoTracker API",
-        description: "RESTful API built with Laravel to track carbon footprint data for enterprises. Includes complex data aggregation and reporting.",
-        tech: ["Laravel", "PostgreSQL", "Redis"],
-        color: "#50e3c2", // Cyan/Green
-        link: "#",
-        github: "#"
-    },
-    {
-        id: 4,
-        title: "Crypto Portfolio App",
-        description: "Mobile-first web application to track cryptocurrency investments, utilizing real-time WebSocket data from major exchanges.",
-        tech: ["React Native", "Expo", "Zustand"],
-        color: "#f8e71c", // Yellow
-        link: "#",
-        github: "#"
-    },
+    }
 ];
 
 export default function ProjectsPage() {
