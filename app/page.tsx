@@ -11,7 +11,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#f4f4f0] dark:bg-[#1a1a1a] text-black dark:text-white p-3 sm:p-4 md:p-8 font-sans selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors duration-300">
       {/* Header Navigation */}
       <header className="border-[3px] border-black dark:border-white p-3 sm:p-4 md:p-6 mb-4 md:mb-8 bg-white dark:bg-black flex flex-col lg:flex-row items-center justify-between gap-4 max-w-6xl mx-auto shadow-[4px_4px_0_0_#000] lg:shadow-[8px_8px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] dark:lg:shadow-[8px_8px_0_0_#fff]">
-        <nav className="hidden lg:flex lg:flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4 font-black text-[10px] sm:text-xs md:text-sm lg:text-base tracking-wider uppercase w-full lg:w-auto">
+        <nav className="hidden lg:flex lg:flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4 font-press-start text-[8px] sm:text-[10px] md:text-xs tracking-wider uppercase w-full lg:w-auto">
           <div className="border-[3px] border-black dark:border-white bg-[#4a90e2] text-white px-2 sm:px-4 py-2 flex items-center justify-center gap-1 sm:gap-2 shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all w-full lg:w-auto text-center">
             <span>★</span> PROFILE <span>★</span>
           </div>
@@ -41,7 +41,7 @@ export default function Home() {
             {/* Profile Picture Box */}
             <div className="relative">
               {/* Sticker */}
-              <div className="absolute -top-3 -right-3 md:-top-5 md:-right-5 border-[3px] border-black dark:border-white bg-[#ff3b30] text-white font-black px-2 sm:px-3 py-1 rotate-[12deg] shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] z-20 text-[10px] sm:text-sm md:text-base uppercase tracking-widest whitespace-nowrap">
+              <div className="absolute -top-3 -right-3 md:-top-5 md:-right-5 border-[3px] border-black dark:border-white bg-[#ff3b30] text-white font-press-start px-2 sm:px-3 py-1 rotate-[12deg] shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] z-20 text-[6px] sm:text-[10px] md:text-xs uppercase tracking-widest whitespace-nowrap">
                 NO BUGS, ONLY FEATURES
               </div>
               <div className="border-[3px] border-black dark:border-white bg-white dark:bg-black aspect-[4/5] sm:aspect-[3/4] p-2 sm:p-3 shadow-[4px_4px_0_0_#000] md:shadow-[6px_6px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] dark:md:shadow-[6px_6px_0_0_#fff]">
@@ -56,14 +56,14 @@ export default function Home() {
               </div>
 
               {/* Level Badge */}
-              <div className="mt-4 md:mt-6 border-[3px] border-black dark:border-white bg-[#f8e71c] dark:bg-[#b8a900] font-black p-2 sm:p-3 text-center shadow-[3px_3px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[3px_3px_0_0_#fff] text-black dark:text-white uppercase tracking-wider text-xs sm:text-sm">
+              <div className="mt-4 md:mt-6 border-[3px] border-black dark:border-white bg-[#f8e71c] dark:bg-[#b8a900] font-press-start p-2 sm:p-3 text-center shadow-[3px_3px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[3px_3px_0_0_#fff] text-black dark:text-white uppercase tracking-wider text-[10px] sm:text-xs">
                 MOBILE DEVELOPER
               </div>
             </div>
 
             {/* Server Stats Box */}
             <div className="border-[3px] border-black dark:border-white bg-white dark:bg-black shadow-[4px_4px_0_0_#000] md:shadow-[6px_6px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] mt-auto">
-              <div className="border-b-[3px] border-black dark:border-white p-2 sm:p-3 flex items-center font-mono font-bold text-xs sm:text-sm bg-gray-100 dark:bg-zinc-900 border-b-black dark:border-b-white">
+              <div className="border-b-[3px] border-black dark:border-white p-2 sm:p-3 flex items-center font-press-start text-[8px] sm:text-[10px] bg-gray-100 dark:bg-zinc-900 border-b-black dark:border-b-white">
                 <span className="mr-2">≡</span> SERVER_STATS.JSON
               </div>
               <div className="p-3 sm:p-4 font-mono text-[10px] sm:text-xs md:text-sm space-y-2 sm:space-y-3 bg-[#fff9db] dark:bg-[#1f1a00] dark:text-gray-300">
@@ -77,7 +77,7 @@ export default function Home() {
                 </div>
                 <div className="flex justify-between items-center pb-0.5 sm:pb-1">
                   <span className="font-bold whitespace-nowrap mr-2 text-black dark:text-white">Status</span>
-                  <span className="bg-black dark:bg-white text-[#50e3c2] dark:text-[#008f6b] font-bold px-1.5 sm:px-2 py-0.5 whitespace-nowrap animate-pulse">OPTIMAL</span>
+                  <span className="bg-black dark:bg-white text-[#50e3c2] dark:text-[#008f6b] font-press-start text-[10px] px-1.5 sm:px-2 py-1 whitespace-nowrap animate-pulse">OPTIMAL</span>
                 </div>
               </div>
             </div>
@@ -88,21 +88,21 @@ export default function Home() {
 
             {/* Header Text */}
             <div className="mb-6 relative z-10 pt-2 lg:pt-0 text-center lg:text-left">
-              <h1 className="text-[12vw] sm:text-5xl md:text-7xl lg:text-[5rem] font-black leading-[0.85] uppercase tracking-tighter text-black dark:text-white break-words">
+              <h1 className="text-[10vw] sm:text-4xl md:text-6xl lg:text-[4rem] font-press-start leading-[1.2] uppercase tracking-tighter text-black dark:text-white break-words">
                 MAKDUM <br />
                 <span className="text-[#4a90e2]">IBROHIM</span>
               </h1>
 
               {/* Role Badges */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 mt-4 sm:mt-6 font-bold text-[10px] sm:text-xs md:text-sm uppercase tracking-wider">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 mt-4 sm:mt-6 font-press-start text-[8px] sm:text-[10px] md:text-xs uppercase tracking-wider">
                 <div className="border-[2px] sm:border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] text-black dark:text-white px-2 sm:px-3 py-1 sm:py-1.5 shadow-[2px_2px_0_0_#000] sm:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] flex items-center gap-1 sm:gap-2">
-                  FREELANCER <Briefcase size={14} className="sm:w-4 sm:h-4" strokeWidth={2.5} />
+                  FREELANCER <Briefcase size={12} className="sm:w-3 sm:h-3" strokeWidth={3} />
                 </div>
                 <div className="border-[2px] sm:border-[3px] border-black dark:border-white bg-[#4a90e2] text-white px-2 sm:px-3 py-1 sm:py-1.5 shadow-[2px_2px_0_0_#000] sm:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] flex items-center gap-1 sm:gap-2">
-                  FULLSTACK <Laptop size={14} className="sm:w-4 sm:h-4" strokeWidth={2.5} />
+                  FULLSTACK <Laptop size={12} className="sm:w-3 sm:h-3" strokeWidth={3} />
                 </div>
                 <div className="border-[2px] sm:border-[3px] border-black dark:border-white bg-[#ff3b30] text-white px-2 sm:px-3 py-1 sm:py-1.5 shadow-[2px_2px_0_0_#000] sm:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] flex items-center gap-1 sm:gap-2">
-                  MOBILE DEV<Smartphone size={14} className="sm:w-4 sm:h-4" strokeWidth={2.5} />
+                  MOBILE DEV<Smartphone size={12} className="sm:w-3 sm:h-3" strokeWidth={3} />
                 </div>
               </div>
 
@@ -140,7 +140,7 @@ export default function Home() {
                   Hai! Aku web developer yang excited banget bikin website atau aplikasi yang kece dan bisa dipake. Fokus utamaku di frontend, tapi lagi gaspol juga belajar backend. Selalu open buat tantangan baru biar makin jago!
                 </p>
 
-                <div className="mb-2 sm:mb-3 font-bold uppercase tracking-widest text-black dark:text-white text-[10px] sm:text-xs md:text-sm">
+                <div className="mb-2 sm:mb-3 font-press-start tracking-wider text-black dark:text-white text-[8px] sm:text-[10px] md:text-xs">
                   <span className="border-b-[1.5px] sm:border-b-2 border-black dark:border-white pb-0.5 sm:pb-1">TECH ARSENAL:</span>
                 </div>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 mb-4 sm:mb-6">
