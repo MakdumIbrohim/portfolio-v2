@@ -5,6 +5,7 @@ import { ThemeToggle } from '@/components/theme-toggle';
 import { DontClickButton } from '@/components/dont-click-button';
 import { AudioPlayerCard } from '@/components/audio-player-card';
 import { MobileMenu } from '@/components/mobile-menu';
+import { LoadingBar } from '@/components/loading-bar';
 
 export default function Home() {
   return (
@@ -60,6 +61,9 @@ export default function Home() {
                 MOBILE DEVELOPER
               </div>
             </div>
+
+            {/* Loading Bar linking to Server Stats */}
+            <LoadingBar />
 
             {/* Server Stats Box */}
             <div className="border-[3px] border-black dark:border-white bg-white dark:bg-black shadow-[4px_4px_0_0_#000] md:shadow-[6px_6px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] mt-auto">
