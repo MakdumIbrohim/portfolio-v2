@@ -29,7 +29,7 @@ export function UISounds() {
         osc.frequency.exponentialRampToValueAtTime(1200, ctx.currentTime + 0.05);
 
         // Increase to 0.4 for a much louder hover beep
-        gain.gain.setValueAtTime(50.0, ctx.currentTime);
+        gain.gain.setValueAtTime(2.0, ctx.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.05);
 
         osc.connect(gain);
@@ -52,7 +52,7 @@ export function UISounds() {
         osc.frequency.exponentialRampToValueAtTime(100, ctx.currentTime + 0.1);
 
         // Maximize click volume to 0.8
-        gain.gain.setValueAtTime(50.0, ctx.currentTime);
+        gain.gain.setValueAtTime(2.0, ctx.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.1);
 
         osc.connect(gain);
