@@ -41,5 +41,12 @@ export const audioTracks: AudioTrack[] = [
         artist: "Tulus",
         coverUrl: "/music/tulus/monokrom/monokrom.png",
         audioUrl: "/music/tulus/monokrom/TULUS%20-%20Monokrom%20(Official%20Music%20Video).mp3"
+    },
+    {
+        id: "track-6",
+        title: "Kota Ini Tak Sama Tanpamu",
+        artist: "Nadhif Basalamah",
+        coverUrl: "/music/nadhif-basalamah/kota-ini-tak-sama-tanpamu/grp6FCnioMM-HD.jpg",
+        audioUrl: "/music/nadhif-basalamah/kota-ini-tak-sama-tanpamu/Nadhif%20Basalamah%20-%20kota%20ini%20tak%20sama%20tanpamu%20(Official%20Lyric%20Video).mp3"
     }
 ];
