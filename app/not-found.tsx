@@ -5,13 +5,13 @@ import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function NotFound() {
     return (
-        <div className="min-h-screen bg-[#f4f4f0] dark:bg-[#1a1a1a] text-black dark:text-white p-3 sm:p-4 md:p-8 font-sans selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors duration-300 flex flex-col items-center justify-center relative">
+        <div className="min-h-screen bg-[#ff3b30] text-white p-6 sm:p-12 md:p-16 font-sans selection:bg-white selection:text-black flex flex-col items-center justify-center relative overflow-hidden">
             <div className="absolute top-4 right-4 sm:top-8 sm:right-8 z-50">
                 <ThemeToggle />
             </div>
 
-            {/* Neo-brutalist Container */}
-            <div className="border-[4px] border-black dark:border-white bg-[#ff3b30] text-white p-6 sm:p-10 max-w-2xl w-full mx-auto shadow-[8px_8px_0_0_#000] md:shadow-[16px_16px_0_0_#000] dark:shadow-[8px_8px_0_0_#fff] dark:md:shadow-[16px_16px_0_0_#fff] relative overflow-hidden">
+            {/* Main Content */}
+            <div className="w-full max-w-3xl flex flex-col relative z-10">
 
                 {/* Warning Header */}
                 <div className="border-b-[4px] border-dashed border-white pb-4 mb-6 flex items-center justify-between">
