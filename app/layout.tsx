@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { RetroCursor } from "@/components/retro-cursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,9 +40,11 @@ export default function RootLayout({
           defaultTheme="light"
           disableTransitionOnChange
         >
+          <RetroCursor />
           {children}
         </ThemeProvider>
       </body>
     </html>
   );
 }
+
