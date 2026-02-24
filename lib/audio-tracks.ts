@@ -48,5 +48,12 @@ export const audioTracks: AudioTrack[] = [
         artist: "Nadhif Basalamah",
         coverUrl: "/music/nadhif-basalamah/kota-ini-tak-sama-tanpamu/grp6FCnioMM-HD.jpg",
         audioUrl: "/music/nadhif-basalamah/kota-ini-tak-sama-tanpamu/Nadhif%20Basalamah%20-%20kota%20ini%20tak%20sama%20tanpamu%20(Official%20Lyric%20Video).mp3"
+    },
+    {
+        id: "track-7",
+        title: "Bergema Sampai Selamanya",
+        artist: "Nadhif Basalamah",
+        coverUrl: "/music/nadhif-basalamah/bergema-sampai-selamanya/gvunApwKIiY-HD.jpg",
+        audioUrl: "/music/nadhif-basalamah/bergema-sampai-selamanya/Nadhif%20Basalamah%20-%20bergema%20sampai%20selamanya%20(Official%20Lyric%20Video).mp3"
     }
 ];
