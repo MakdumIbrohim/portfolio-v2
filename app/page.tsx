@@ -13,16 +13,16 @@ export default function Home() {
       {/* Header Navigation */}
       <header className="border-[3px] border-black dark:border-white p-3 sm:p-4 md:p-6 mb-4 md:mb-8 bg-white dark:bg-black flex flex-col lg:flex-row items-center justify-between gap-4 max-w-6xl mx-auto shadow-[4px_4px_0_0_#000] lg:shadow-[8px_8px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] dark:lg:shadow-[8px_8px_0_0_#fff]">
         <nav className="hidden lg:flex lg:flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4 font-press-start text-[8px] sm:text-[10px] md:text-xs tracking-wider uppercase w-full lg:w-auto">
-          <div className="border-[3px] border-black dark:border-white bg-[#4a90e2] text-white px-2 sm:px-4 py-2 flex items-center justify-center gap-1 sm:gap-2 shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all w-full lg:w-auto text-center">
+          <div className="border-[3px] border-black dark:border-white bg-[#4a90e2] text-white px-2 sm:px-4 py-2 flex items-center justify-center gap-1 sm:gap-2 shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] active:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] active:shadow-[1px_1px_0_0_#000] dark:active:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all w-full lg:w-auto text-center">
             <span>★</span> PROFILE <span>★</span>
           </div>
-          <Link href="/projects" className="border-[3px] border-black dark:border-white bg-[#f8e71c] dark:bg-[#b8a900] px-2 sm:px-4 py-2 flex items-center justify-center shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all text-black dark:text-white w-full lg:w-auto text-center block">
+          <Link href="/projects" className="border-[3px] border-black dark:border-white bg-[#f8e71c] dark:bg-[#b8a900] px-2 sm:px-4 py-2 flex items-center justify-center shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] active:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] active:shadow-[1px_1px_0_0_#000] dark:active:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all text-black dark:text-white w-full lg:w-auto text-center block">
             PROJECTS
           </Link>
-          <Link href="/certificates" className="border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] px-2 sm:px-4 py-2 flex items-center justify-center shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all text-black dark:text-white w-full lg:w-auto text-center block">
+          <Link href="/certificates" className="border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] px-2 sm:px-4 py-2 flex items-center justify-center shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] active:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] active:shadow-[1px_1px_0_0_#000] dark:active:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all text-black dark:text-white w-full lg:w-auto text-center block">
             CERTIFICATES
           </Link>
-          <Link href="/contact" className="border-[3px] border-black dark:border-white bg-[#ff79c6] dark:bg-[#b83280] px-2 sm:px-4 py-2 flex items-center justify-center shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all text-black dark:text-white w-full lg:w-auto text-center block">
+          <Link href="/contact" className="border-[3px] border-black dark:border-white bg-[#ff79c6] dark:bg-[#b83280] px-2 sm:px-4 py-2 flex items-center justify-center shadow-[2px_2px_0_0_#000] md:shadow-[4px_4px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] dark:md:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] active:translate-y-[2px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] active:shadow-[1px_1px_0_0_#000] dark:active:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all text-black dark:text-white w-full lg:w-auto text-center block">
             CONTACT
           </Link>
         </nav>
@@ -135,7 +135,7 @@ export default function Home() {
               {/* Terminal Content */}
               <div className="p-3 sm:p-5 md:p-8 font-mono text-xs sm:text-sm md:text-base leading-relaxed sm:leading-relaxed bg-[#fdfdfd] dark:bg-[#121212] flex-1 text-black dark:text-gray-300 overflow-x-auto">
                 <div className="mb-4 sm:mb-5 max-w-full overflow-hidden">
-                  <span className="bg-[#f8e71c] dark:bg-[#b8a900] px-1.5 sm:px-2 py-0.5 font-bold text-black border-[2px] border-black dark:border-white shadow-[1px_1px_0_0_#000] sm:shadow-[2px_2px_0_0_#000] dark:shadow-[1px_1px_0_0_#fff] dark:text-white inline-block">
+                  <span className="bg-[#f8e71c] dark:bg-[#b8a900] px-1.5 sm:px-2 py-0.5 font-bold text-black border-[2px] border-black dark:border-white shadow-[1px_1px_0_0_#000] sm:shadow-[2px_2px_0_0_#000] dark:shadow-[1px_1px_0_0_#fff] sm:dark:shadow-[2px_2px_0_0_#fff] dark:text-white inline-block">
                     $ ./makdum --info
                   </span>
                 </div>
@@ -149,7 +149,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 mb-4 sm:mb-6">
                   {['Laravel', 'React', 'Next.js', 'Tailwind', 'Docker', 'Linux'].map(tech => (
-                    <span key={tech} className="border-[1.5px] sm:border-[2px] border-black dark:border-white bg-gray-100 dark:bg-zinc-800 text-black dark:text-white px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-bold shadow-[2px_2px_0_0_#000] sm:shadow-[3px_3px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:bg-[#f8e71c] dark:hover:bg-[#b8a900] dark:hover:text-white hover:translate-y-[1px] hover:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all">
+                    <span key={tech} className="border-[1.5px] sm:border-[2px] border-black dark:border-white bg-gray-100 dark:bg-zinc-800 text-black dark:text-white px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-bold shadow-[2px_2px_0_0_#000] sm:shadow-[3px_3px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:bg-[#f8e71c] active:bg-[#f8e71c] dark:hover:bg-[#b8a900] dark:active:bg-[#b8a900] dark:hover:text-white dark:active:text-white hover:translate-y-[1px] active:translate-y-[1px] hover:shadow-[1px_1px_0_0_#000] active:shadow-[1px_1px_0_0_#000] dark:hover:shadow-[1px_1px_0_0_#fff] dark:active:shadow-[1px_1px_0_0_#fff] cursor-pointer transition-all">
                       {tech}
                     </span>
                   ))}

@@ -91,7 +91,7 @@ export default function ProjectsPage() {
                     {projects.map((project) => (
                         <div
                             key={project.id}
-                            className="border-[3px] border-black dark:border-white bg-[#fdfdfd] dark:bg-[#1e1e1e] shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] transition-transform hover:-translate-y-2 hover:shadow-[8px_8px_0_0_#000] dark:hover:shadow-[8px_8px_0_0_#fff] relative flex flex-col group"
+                            className="border-[3px] border-black dark:border-white bg-[#fdfdfd] dark:bg-[#1e1e1e] shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] transition-transform hover:-translate-y-2 active:-translate-y-2 hover:shadow-[8px_8px_0_0_#000] dark:hover:shadow-[8px_8px_0_0_#fff] active:shadow-[8px_8px_0_0_#000] dark:active:shadow-[8px_8px_0_0_#fff] relative flex flex-col group"
                         >
                             {/* Header colored banner */}
                             <div
@@ -108,12 +108,15 @@ export default function ProjectsPage() {
                             </div>
 
                             <div className="p-5 sm:p-6 md:p-8 flex flex-col flex-1">
+                                {/* Image Wrapper */}
                                 {project.image && (
-                                    <div className="mb-4 sm:mb-6 border-[3px] border-black dark:border-white bg-gray-200 dark:bg-zinc-800 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] overflow-hidden aspect-video relative group-hover:-translate-y-1 transition-transform">
+                                    <div className="mb-4 sm:mb-6 border-[3px] border-black dark:border-white bg-gray-200 dark:bg-zinc-800 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] overflow-hidden aspect-video relative group-hover:-translate-y-1 group-active:-translate-y-1 transition-transform">
+                                        <div className="absolute inset-0 bg-black/5 dark:bg-white/5 z-10 pointer-events-none"></div>
                                         <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
                                     </div>
                                 )}
-                                <h2 className="text-sm sm:text-base font-press-start uppercase tracking-tight mb-4 group-hover:underline decoration-4 underline-offset-4 leading-[1.4]">
+                                {/* Title */}
+                                <h2 className="text-sm sm:text-base font-press-start uppercase tracking-tight mb-4 group-hover:underline group-active:underline decoration-4 underline-offset-4 leading-[1.4]">
                                     {project.title}
                                 </h2>
 
@@ -134,12 +137,12 @@ export default function ProjectsPage() {
                                 </div>
 
                                 {/* Action Buttons */}
-                                <div className="flex flex-wrap flex-col sm:flex-row gap-3 sm:gap-4 mt-auto pt-4 border-t-[3px] border-dashed border-black dark:border-white opacity-50 group-hover:opacity-100 transition-opacity">
-                                    <a href={project.github} className="border-[3px] border-black dark:border-white bg-black dark:bg-white text-white dark:text-black font-press-start text-[8px] sm:text-[10px] px-4 py-3 flex justify-center items-center gap-2 flex-1 hover:translate-y-[2px] shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:shadow-none transition-all uppercase leading-[1.3] text-center w-full">
+                                <div className="flex flex-wrap flex-col sm:flex-row gap-3 sm:gap-4 mt-auto pt-4 border-t-[3px] border-dashed border-black dark:border-white opacity-50 group-hover:opacity-100 group-active:opacity-100 transition-opacity">
+                                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="border-[3px] border-black dark:border-white bg-black dark:bg-white text-white dark:text-black font-press-start text-[8px] sm:text-[10px] px-4 py-3 flex justify-center items-center gap-2 flex-1 shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:translate-y-[2px] active:translate-y-[2px] hover:shadow-none active:shadow-none transition-all uppercase leading-[1.3] text-center w-full">
                                         <Github size={14} strokeWidth={2.5} /> Repo
                                     </a>
                                     {project.link && (
-                                        <a href={project.link} className="border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] text-black dark:text-white font-press-start text-[8px] sm:text-[10px] px-4 py-3 flex justify-center items-center gap-2 flex-1 hover:translate-y-[2px] shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:shadow-none transition-all uppercase leading-[1.3] text-center w-full">
+                                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] text-black dark:text-white font-press-start text-[8px] sm:text-[10px] px-4 py-3 flex justify-center items-center gap-2 flex-1 shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:translate-y-[2px] active:translate-y-[2px] hover:shadow-none active:shadow-none transition-all uppercase leading-[1.3] text-center w-full">
                                             <ExternalLink size={14} strokeWidth={2.5} /> Live
                                         </a>
                                     )}

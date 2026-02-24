@@ -119,20 +119,20 @@ export default function Certificates() {
                             <button
                                 key={issuerGroup.name}
                                 onClick={() => setSelectedIssuer(issuerGroup.name)}
-                                className="border-[3px] border-black dark:border-white bg-[#fdfdfd] dark:bg-[#1e1e1e] shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] transition-transform hover:-translate-y-2 hover:shadow-[8px_8px_0_0_#000] dark:hover:shadow-[8px_8px_0_0_#fff] relative overflow-hidden group flex flex-col items-center justify-center p-8 sm:p-10 text-center min-h-[250px] cursor-pointer w-full focus:outline-none focus:ring-4 focus:ring-[#f8e71c]"
+                                className="border-[3px] border-black dark:border-white bg-[#fdfdfd] dark:bg-[#1e1e1e] shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] transition-transform hover:-translate-y-2 active:-translate-y-2 hover:shadow-[8px_8px_0_0_#000] dark:hover:shadow-[8px_8px_0_0_#fff] active:shadow-[8px_8px_0_0_#000] dark:active:shadow-[8px_8px_0_0_#fff] relative overflow-hidden group flex flex-col items-center justify-center p-8 sm:p-10 text-center min-h-[250px] cursor-pointer w-full focus:outline-none focus:ring-4 focus:ring-[#f8e71c]"
                             >
                                 <div
                                     className="absolute top-0 left-0 right-0 h-3 border-b-[3px] border-black dark:border-white transition-colors"
                                     style={{ backgroundColor: issuerGroup.color }}
                                 ></div>
-                                <div className="text-6xl mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 flex items-center justify-center min-h-[80px] sm:min-h-[120px]">
+                                <div className="text-6xl mb-6 group-hover:scale-110 group-active:scale-110 group-hover:rotate-6 group-active:rotate-6 transition-transform duration-300 flex items-center justify-center min-h-[80px] sm:min-h-[120px]">
                                     {issuerGroup.icon.startsWith('/') ? (
                                         <img src={issuerGroup.icon} alt={issuerGroup.name} className="h-24 sm:h-32 w-auto object-contain drop-shadow-sm" />
                                     ) : (
                                         issuerGroup.icon
                                     )}
                                 </div>
-                                <h2 className="text-sm sm:text-base font-press-start uppercase tracking-tight mb-4 group-hover:text-[#4a90e2] transition-colors leading-[1.4]">
+                                <h2 className="text-sm sm:text-base font-press-start uppercase tracking-tight mb-4 group-hover:text-[#4a90e2] group-active:text-[#4a90e2] transition-colors leading-[1.4]">
                                     {issuerGroup.name}
                                 </h2>
                                 <div className="bg-black dark:bg-white text-white dark:text-black font-press-start text-[8px] px-3 py-1.5 uppercase tracking-widest border-[2px] border-black dark:border-white mt-auto inline-block">
@@ -149,7 +149,7 @@ export default function Certificates() {
                             </h2>
                             <button
                                 onClick={() => setSelectedIssuer(null)}
-                                className="border-[3px] border-black dark:border-white bg-[#ff79c6] dark:bg-[#b83280] text-white px-4 py-3 font-press-start text-[8px] sm:text-[10px] md:text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_#000] dark:hover:shadow-[2px_2px_0_0_#fff] transition-all w-full sm:w-auto leading-[1.3]"
+                                className="border-[3px] border-black dark:border-white bg-[#ff79c6] dark:bg-[#b83280] text-white px-4 py-3 font-press-start text-[8px] sm:text-[10px] md:text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] hover:translate-y-[2px] active:translate-y-[2px] hover:shadow-[2px_2px_0_0_#000] dark:hover:shadow-[2px_2px_0_0_#fff] active:shadow-[2px_2px_0_0_#000] dark:active:shadow-[2px_2px_0_0_#fff] transition-all w-full sm:w-auto leading-[1.3]"
                             >
                                 <span className="text-lg leading-none mt-[-2px]">←</span> BACK TO ISSUERS
                             </button>
@@ -159,7 +159,7 @@ export default function Certificates() {
                             {certificates.filter(c => c.issuer === selectedIssuer).map((cert) => (
                                 <div
                                     key={cert.id}
-                                    className="border-[3px] border-black dark:border-white bg-[#fdfdfd] dark:bg-[#1e1e1e] shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] transition-transform hover:-translate-y-2 hover:shadow-[8px_8px_0_0_#000] dark:hover:shadow-[8px_8px_0_0_#fff] relative overflow-hidden group flex flex-col h-full cursor-pointer"
+                                    className="border-[3px] border-black dark:border-white bg-[#fdfdfd] dark:bg-[#1e1e1e] shadow-[6px_6px_0_0_#000] dark:shadow-[6px_6px_0_0_#fff] transition-transform hover:-translate-y-2 active:-translate-y-2 hover:shadow-[8px_8px_0_0_#000] dark:hover:shadow-[8px_8px_0_0_#fff] active:shadow-[8px_8px_0_0_#000] dark:active:shadow-[8px_8px_0_0_#fff] relative overflow-hidden group flex flex-col h-full cursor-pointer"
                                 >
                                     {/* Colorful Top Banner indicating technology */}
                                     <div
@@ -211,7 +211,7 @@ export default function Certificates() {
                                                     href={cert.credentialUrl}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="border-[2px] border-black dark:border-white bg-white dark:bg-black font-bold text-xs sm:text-sm px-4 py-2 flex justify-center items-center gap-2 shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:bg-[#f8e71c] dark:hover:bg-[#b8a900] hover:text-black dark:hover:text-black transition-colors w-full sm:w-auto uppercase inline-flex"
+                                                    className="border-[2px] border-black dark:border-white bg-white dark:bg-black font-bold text-xs sm:text-sm px-4 py-2 flex justify-center items-center gap-2 shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] hover:bg-[#f8e71c] dark:hover:bg-[#b8a900] active:bg-[#f8e71c] dark:active:bg-[#b8a900] hover:text-black dark:hover:text-black active:text-black dark:active:text-black transition-colors w-full sm:w-auto uppercase inline-flex"
                                                 >
                                                     <ExternalLink size={16} strokeWidth={2.5} /> VIEW CREDENTIAL
                                                 </a>
