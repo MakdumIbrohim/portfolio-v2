@@ -5,6 +5,7 @@ import { Play, Pause, SkipForward, SkipBack, Volume2, VolumeX, Disc3, Repeat, Re
 import { audioTracks } from '@/lib/audio-tracks';
 
 export function AudioPlayerCard() {
+    const [selectedArtist, setSelectedArtist] = useState('All');
     const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
     const [isMuted, setIsMuted] = useState(false);
@@ -16,7 +17,15 @@ export function AudioPlayerCard() {
 
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
-    const currentTrack = audioTracks[currentTrackIndex];
+    // Compute unique artists and filter tracks
+    const allArtists = ['All', ...Array.from(new Set(audioTracks.map(t => t.artist)))];
+    const filteredTracks = selectedArtist === 'All'
+        ? audioTracks
+        : audioTracks.filter(t => t.artist === selectedArtist);
+
+    // Ensure index is valid when filter changes
+    const validCurrentIndex = currentTrackIndex >= filteredTracks.length ? 0 : currentTrackIndex;
+    const currentTrack = filteredTracks[validCurrentIndex] || audioTracks[0];
 
     const formatTime = (time: number) => {
         if (isNaN(time)) return "0:00";
@@ -83,7 +92,7 @@ export function AudioPlayerCard() {
                 audioRef.current.removeEventListener('ended', handleEnded);
             }
         };
-    }, [currentTrackIndex]); // Re-run when track changes
+    }, [validCurrentIndex, selectedArtist]); // Re-run when track or filter changes
 
     const togglePlay = () => {
         if (audioRef.current) {
@@ -105,20 +114,21 @@ export function AudioPlayerCard() {
 
     const playNext = () => {
         if (isShuffle) {
+            if (filteredTracks.length <= 1) return;
             let nextIndex;
             do {
-                nextIndex = Math.floor(Math.random() * audioTracks.length);
-            } while (nextIndex === currentTrackIndex && audioTracks.length > 1);
+                nextIndex = Math.floor(Math.random() * filteredTracks.length);
+            } while (nextIndex === validCurrentIndex);
             setCurrentTrackIndex(nextIndex);
         } else {
             // Note: Stop playing if we reach the end and repeat is 'none'
-            if (repeatMode === 'none' && currentTrackIndex === audioTracks.length - 1) {
+            if (repeatMode === 'none' && validCurrentIndex === filteredTracks.length - 1) {
                 setIsPlaying(false);
                 setProgress(0);
                 setCurrentTime(0);
                 return;
             }
-            setCurrentTrackIndex((prev) => (prev + 1) % audioTracks.length);
+            setCurrentTrackIndex((validCurrentIndex + 1) % filteredTracks.length);
         }
         setProgress(0);
         setCurrentTime(0);
@@ -126,13 +136,14 @@ export function AudioPlayerCard() {
 
     const playPrev = () => {
         if (isShuffle) {
+            if (filteredTracks.length <= 1) return;
             let prevIndex;
             do {
-                prevIndex = Math.floor(Math.random() * audioTracks.length);
-            } while (prevIndex === currentTrackIndex && audioTracks.length > 1);
+                prevIndex = Math.floor(Math.random() * filteredTracks.length);
+            } while (prevIndex === validCurrentIndex);
             setCurrentTrackIndex(prevIndex);
         } else {
-            setCurrentTrackIndex((prev) => (prev - 1 + audioTracks.length) % audioTracks.length);
+            setCurrentTrackIndex((validCurrentIndex - 1 + filteredTracks.length) % filteredTracks.length);
         }
         setProgress(0);
         setCurrentTime(0);
@@ -150,8 +161,40 @@ export function AudioPlayerCard() {
         setIsShuffle(!isShuffle);
     };
 
+    const handleArtistChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const newArtist = e.target.value;
+        setSelectedArtist(newArtist);
+        setCurrentTrackIndex(0); // Reset to first song of the newly selected artist
+        if (isPlaying) {
+            // Give layout effect time to update the current track reference
+            setTimeout(() => {
+                if (audioRef.current) {
+                    audioRef.current.play().catch(console.error);
+                }
+            }, 100);
+        }
+    };
+
     return (
         <div className="mt-8 border-[3px] border-black dark:border-white bg-[#50e3c2] dark:bg-[#008f6b] p-3 shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#fff] text-black dark:text-white flex flex-col gap-3 relative overflow-hidden group">
+
+            {/* Filter Row */}
+            <div className="flex justify-between items-center w-full mb-1">
+                <span className="font-press-start text-[8px] sm:text-[10px] uppercase font-bold tracking-wider opacity-80 pl-1">
+                    PLAYLIST FILTER:
+                </span>
+                <select
+                    value={selectedArtist}
+                    onChange={handleArtistChange}
+                    className="appearance-none font-press-start text-[8px] sm:text-[10px] bg-white dark:bg-black text-black dark:text-white border-[2px] border-black dark:border-white px-2 py-1 uppercase shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#fff] outline-none hover:bg-[#f8e71c] dark:hover:bg-[#b8a900] active:bg-[#f8e71c] dark:hover:text-black cursor-pointer transition-colors max-w-[150px] sm:max-w-[200px] truncate"
+                >
+                    {allArtists.map(artist => (
+                        <option key={artist} value={artist} className="font-sans text-xs font-bold uppercase">
+                            {artist}
+                        </option>
+                    ))}
+                </select>
+            </div>
 
             {/* Top Row: Responsive layout, stack on mobile, row on desktop */}
             <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 w-full justify-between">
