@@ -1,15 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import { Terminal, AlertTriangle, Home } from 'lucide-react';
-import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function NotFound() {
     return (
         <div className="min-h-screen bg-[#ff3b30] text-white p-6 sm:p-12 md:p-16 font-sans selection:bg-white selection:text-black flex flex-col items-center justify-center relative overflow-hidden">
-            <div className="absolute top-4 right-4 sm:top-8 sm:right-8 z-50">
-                <ThemeToggle />
-            </div>
-
             {/* Main Content */}
             <div className="w-full max-w-3xl flex flex-col relative z-10">
 
