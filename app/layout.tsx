@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { RetroCursor } from "@/components/retro-cursor";
+import { UISounds } from "@/components/ui-sounds";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,6 +42,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <RetroCursor />
+          <UISounds />
           {children}
         </ThemeProvider>
       </body>
