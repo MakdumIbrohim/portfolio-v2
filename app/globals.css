@@ -38,6 +38,38 @@ body {
     animation: glitch-text 1s infinite;
   }
 
+  @keyframes trail-fade {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0) translateY(20px) rotate(45deg);
+    }
+  }
+
+  .animate-trail-fade {
+    animation: trail-fade 0.5s forwards ease-out;
+  }
+
+  @keyframes page-enter {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-page-enter {
+    animation: page-enter 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
   @keyframes glitch-text {
     0% {
       text-shadow:
