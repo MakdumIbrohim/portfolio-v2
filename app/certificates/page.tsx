@@ -50,6 +50,16 @@ const certificates = [
         credentialUrl: "https://dicoding.com/certificates/EYX4K95J6PDL"
     },
     {
+        id: 6,
+        title: "Belajar Fundamental Aplikasi Flutter",
+        issuer: "Dicoding Indonesia",
+        date: "01 Maret 2026",
+        color: "#2d3e50", // Dicoding dark blue
+        icon: "/icon/dicoding/dicoding.jpeg",
+        imageUrl: null,
+        credentialUrl: "/certificates/dicoding/belajar-fundamental-aplikasi-flutter/sertifikat_course_195_4021197_010326112956.pdf"
+    },
+    {
         id: 2,
         title: "Sertifikat Kompetensi Kemalasan",
         issuer: "IMPHNEN",
