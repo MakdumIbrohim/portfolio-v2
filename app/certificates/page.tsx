@@ -20,6 +20,16 @@ const certificates = [
         credentialUrl: "/certificates/dicoding/sertifikat_belajar_dasar_pemrograman_web.png"
     },
     {
+        id: 2,
+        title: "Sertifikat Kompetensi Kemalasan",
+        issuer: "IMPHNEN",
+        date: "02 August 2025",
+        color: "#0595d2", // IMPHNEN Blue
+        icon: "/icon/imphnen/imphnen.png",
+        imageUrl: "https://raw.githubusercontent.com/MakdumIbrohim/fortofolio/main/public/sertifikat_kompetensi_kemalasan.jpg",
+        credentialUrl: "https://raw.githubusercontent.com/MakdumIbrohim/fortofolio/main/public/sertifikat_kompetensi_kemalasan.jpg"
+    },
+    {
         id: 3,
         title: "Belajar Membuat Front-End Web untuk Pemula",
         issuer: "Dicoding Indonesia",
@@ -69,16 +79,6 @@ const certificates = [
         imageUrl: null,
         credentialUrl: "/certificates/dicoding/sertifikat-idcamp-2025-level-menengah/Sertifikat-IDCamp-2025-Level-Menengah-Makdum Ibrohim.pdf"
     },
-    {
-        id: 2,
-        title: "Sertifikat Kompetensi Kemalasan",
-        issuer: "IMPHNEN",
-        date: "02 August 2025",
-        color: "#0595d2", // IMPHNEN Blue
-        icon: "/icon/imphnen/imphnen.png",
-        imageUrl: "https://raw.githubusercontent.com/MakdumIbrohim/fortofolio/main/public/sertifikat_kompetensi_kemalasan.jpg",
-        credentialUrl: "https://raw.githubusercontent.com/MakdumIbrohim/fortofolio/main/public/sertifikat_kompetensi_kemalasan.jpg"
-    }
 ];
 
 export default function Certificates() {
