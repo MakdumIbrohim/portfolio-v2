@@ -60,6 +60,16 @@ const certificates = [
         credentialUrl: "/certificates/dicoding/belajar-fundamental-aplikasi-flutter/sertifikat_course_195_4021197_010326112956.pdf"
     },
     {
+        id: 7,
+        title: "IDCamp 2025 Level Menengah",
+        issuer: "Dicoding Indonesia",
+        date: "16 Agustus 2025",
+        color: "#2d3e50", // Dicoding dark blue
+        icon: "/icon/dicoding/dicoding.jpeg",
+        imageUrl: null,
+        credentialUrl: "/certificates/dicoding/sertifikat-idcamp-2025-level-menengah/Sertifikat-IDCamp-2025-Level-Menengah-Makdum Ibrohim.pdf"
+    },
+    {
         id: 2,
         title: "Sertifikat Kompetensi Kemalasan",
         issuer: "IMPHNEN",
