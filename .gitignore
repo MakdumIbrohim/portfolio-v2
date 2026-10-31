@@ -17,8 +17,9 @@
 /.next/
 /out/
 
-# production
-/build
+# sveltekit
+/.svelte-kit/
+/build/
 
 # misc
 .DS_Store

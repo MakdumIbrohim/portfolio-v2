@@ -1,0 +1,59 @@
+export interface AudioTrack {
+	id: string;
+	title: string;
+	artist: string;
+	coverUrl: string;
+	audioUrl: string;
+}
+
+export const audioTracks: AudioTrack[] = [
+	{
+		id: 'track-1',
+		title: 'Baby ft. Ludacris',
+		artist: 'Justin Bieber',
+		coverUrl: '/music/justin-bieber/baby/https___images.genius.com_01dfdad244aaade8895f737ef1b15562.565x565x1.jpg',
+		audioUrl: '/music/justin-bieber/baby/Justin%20Bieber%20-%20Baby%20ft.%20Ludacris.mp3'
+	},
+	{
+		id: 'track-2',
+		title: 'Favorite Girl',
+		artist: 'Justin Bieber',
+		coverUrl: '/music/justin-bieber/favorite-girl/thumbnailify.com_youtube_thumbnail_Full_HD_2026-02-22_04-41-02.jpg',
+		audioUrl: '/music/justin-bieber/favorite-girl/Favorite%20Girl.mp3'
+	},
+	{
+		id: 'track-3',
+		title: "It's Only Me",
+		artist: 'Kaleb J',
+		coverUrl: '/music/kaleb-j/its-only-me/thumbnailify.com_youtube_thumbnail_Full_HD_2026-02-22_04-51-41.jpg',
+		audioUrl: "/music/kaleb-j/its-only-me/Kaleb%20J%20-%20It's%20Only%20Me%20Official%20Lyric%20Video%20(English%20Sub%20CC).mp3"
+	},
+	{
+		id: 'track-4',
+		title: 'Love Me',
+		artist: 'Justin Bieber',
+		coverUrl: '/music/justin-bieber/love-me/maxresdefault.jpg',
+		audioUrl: '/music/justin-bieber/love-me/Justin%20Bieber%20-%20Love%20Me.mp3'
+	},
+	{
+		id: 'track-5',
+		title: 'Monokrom',
+		artist: 'Tulus',
+		coverUrl: '/music/tulus/monokrom/monokrom.png',
+		audioUrl: '/music/tulus/monokrom/TULUS%20-%20Monokrom%20(Official%20Music%20Video).mp3'
+	},
+	{
+		id: 'track-6',
+		title: 'Kota Ini Tak Sama Tanpamu',
+		artist: 'Nadhif Basalamah',
+		coverUrl: '/music/nadhif-basalamah/kota-ini-tak-sama-tanpamu/grp6FCnioMM-HD.jpg',
+		audioUrl: '/music/nadhif-basalamah/kota-ini-tak-sama-tanpamu/Nadhif%20Basalamah%20-%20kota%20ini%20tak%20sama%20tanpamu%20(Official%20Lyric%20Video).mp3'
+	},
+	{
+		id: 'track-7',
+		title: 'Bergema Sampai Selamanya',
+		artist: 'Nadhif Basalamah',
+		coverUrl: '/music/nadhif-basalamah/bergema-sampai-selamanya/gvunApwKIiY-HD.jpg',
+		audioUrl: '/music/nadhif-basalamah/bergema-sampai-selamanya/Nadhif%20Basalamah%20-%20bergema%20sampai%20selamanya%20(Official%20Lyric%20Video).mp3'
+	}
+];
