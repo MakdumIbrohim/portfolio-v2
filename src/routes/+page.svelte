@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Briefcase, Laptop, Smartphone } from 'lucide-svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
-	import DontClickButton from '$lib/components/DontClickButton.svelte';
 	import MobileMenu from '$lib/components/MobileMenu.svelte';
 	import LoadingBar from '$lib/components/LoadingBar.svelte';
 	import AudioPlayerCard from '$lib/components/AudioPlayerCard.svelte';
@@ -47,7 +46,6 @@
 			class="flex gap-2 sm:gap-4 w-full lg:w-auto items-stretch justify-center lg:justify-end mt-2 lg:mt-0"
 		>
 			<ThemeToggle />
-			<DontClickButton />
 			<MobileMenu />
 		</div>
 	</header>

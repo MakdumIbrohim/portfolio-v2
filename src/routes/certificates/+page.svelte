@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Award, ExternalLink } from 'lucide-svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
-	import DontClickButton from '$lib/components/DontClickButton.svelte';
 	import MobileMenu from '$lib/components/MobileMenu.svelte';
 
 	interface Certificate {
@@ -149,7 +148,6 @@
 		</nav>
 		<div class="flex flex-1 lg:flex-none gap-2 sm:gap-4 items-center justify-end">
 			<ThemeToggle />
-			<DontClickButton />
 			<MobileMenu />
 		</div>
 	</header>
